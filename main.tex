@@ -1,0 +1,78 @@
+\documentclass{amsart}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,amsmath,amsfonts,amsthm}
+\usepackage{graphicx}
+\usepackage{stmaryrd}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{tikz-cd}
+\usepackage{enumitem}
+
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+\newcommand{\K}{\ensuremath{\mathbb{K}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\usph}[1]{\ensuremath{\mathbb{S}^{#1}}}
+\newcommand{\Aff}{\ensuremath{\text{Aff}}}
+\newcommand{\aff}{\ensuremath{\mathfrak{aff}}}
+\newcommand{\gl}{\ensuremath{\mathfrak{gl}}}
+\newcommand{\GL}{\ensuremath{\text{GL}}}
+\newcommand{\homfunc}[2]{\ensuremath{\text{Hom}\left(#1,#2\right)}}
+\newcommand{\comp}[2]{\ensuremath{\text{H}\left(#1,#2\right)}}
+\newcommand{\homology}[3]{\ensuremath{\text{H}^{#1}\left(#2,#3\right)}}
+\newcommand{\frakg}{\ensuremath{\mathfrak{g}}}
+\newcommand{\pairc}[2]{\ensuremath{\left\langle #1,#2 \right\rangle_+}}
+\newcommand{\paircs}[2]{\ensuremath{\left\langle #1,#2 \right\rangle_-}}
+\newcommand{\pairct}[2]{\ensuremath{\left\langle #1,#2 \right\rangle_\theta}}
+\newcommand{\cbracket}[2]{\ensuremath{\left\llbracket #1,#2 \right\rrbracket_c}}
+\newcommand{\dbracket}[2]{\ensuremath{\left\llbracket #1,#2 \right\rrbracket_d}}
+\newcommand{\lieder}[2]{\ensuremath{\mathcal{L}_#1 #2}}
+\newcommand{\parder}[2]{\ensuremath{\frac{\partial #1}{\partial #2}}}
+\newcommand{\gmet}[2]{\ensuremath{g\left(#1, #2  \right)}}
+\newcommand{\pullg}[2]{\ensuremath{\tilde{g}\left(#1, #2  \right)}}
+\newcommand{\nnet}[2]{\ensuremath{\mathcal{N}\left( #1,#2 \right)}}
+\newcommand{\mnet}[1]{\ensuremath{\mathcal{N}_{W}\left( #1\right)}}
+\newcommand{\lc}{\ensuremath{\nabla^{\text{lc}}}}
+\newcommand{\fnet}{\ensuremath{\mathcal{N}_W}}
+\newcommand{\kldiv}[2]{\ensuremath{\textit{KL}\left( #1,#2 \right)}}
+\newcommand{\gaugecat}{\ensuremath{\mathcal{GC}}}
+\newcommand{\gaugecatu}{\ensuremath{\mathcal{GU}}}
+\DeclareMathOperator{\im}{\ensuremath{\textsf{im}}}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\trace}{\ensuremath{\text{Tr}}}
+\DeclareMathOperator{\ext}{\ensuremath{\text{Ext}}}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}[section]
+\newtheorem{ex}{Example}[section]
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\title{Degeneracy of Koszul-Vinberg spectral sequence.}
+\author{Mirjana Milijevic}
+\address{Faculty of Economics, University of Banja Luka}
+\email{mirjana.milijevic@ef.unibl.org}
+\author{Stéphane PUECHMOREL}
+
+\address{ENAC- Université de Toulouse, 7, avenue Edouard Belin, 31055 Toulouse cedex }
+\email{stephane.puechmorel@enac.fr}
+
+\date{June 2025}
+
+\begin{document}
+
+\maketitle
+\input{intro}
+\input{kv_algebra}
+\input{gauge_equation}
+\end{document}

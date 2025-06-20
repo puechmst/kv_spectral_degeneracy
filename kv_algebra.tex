@@ -1,0 +1,61 @@
+\section{Koszul-Vinberg algebras}
+Koszul-Vinberg algebras, more commonly known as pre-Lie algebras, 
+arise naturally in differential geometry. Let $\left(M ,\nabla \right)$ be a gauge structure with $\nabla$ a torsionless Koszul connection on $M$. A product is defined on $\chi\left(M\right)=\Gamma\left(TM \right)$ by:
+\begin{equation}
+    \label{eq:example_kv}
+    X \circ Y = \nabla_X Y, \, X,Y \in \chi\left(M\right).
+\end{equation}
+The commutator $X\circ Y - Y \circ X$ is the usual Lie bracket, but the Jacobi identity is not satisfied by the product $\circ$. The associator is given by the relation:
+\begin{equation}
+    \label{eq:associator_nabla}
+    \left( X, Y, Z \right) = \nabla_{\nabla_X Y} Z - \nabla_X \nabla_Y Z = - \nabla^2_{X,Y}Z, \, X, Y, Z \in \chi\left(M\right).
+\end{equation}
+From the above property, it is easy to derive the next proposition:
+\begin{prop}
+\label{prop:kv_defect}
+For any $X,Y,Z \in \chi\left(M\right):$
+\begin{equation}
+\label{eq:kv_defect}
+    \left( X, Y, Z \right) - \left( Y, X, Z \right) = - R^\nabla\left( X, Y \right) Z,
+\end{equation}
+with $R^\nabla$ the curvature of $\nabla.$
+\end{prop}
+\begin{proof}
+Obvious from the expression: $R^\nabla\left( X, Y \right) Z = \nabla^2_{X,Y}Z - \nabla^2_{Y,X}Z.$
+\end{proof}
+If $\nabla$ is flat, then:
+$\left( X, Y , Z \right) = \left( Y, X, Z \right),$ that is the defining property of a pre-Lie algebra.
+\subsection{Definition}
+Let $k$ be a field, that will always be $\R$ or $\C$ in the following, and let $A$ be a $k$-vector space. 
+\begin{defn}
+\label{def:kv_def}
+$A$ is said to be a pre-Lie (or a KV-algebra) if equipped with a product $\circ \colon A \times A \to A$ such that, for any $a,b,c$ in $A$:
+\begin{equation}
+    \label{eq:kv_def}
+    (a,b,c)=(b,a,c), \, (a,b,c)=(a\circ b )\circ c - a \circ (b \circ c).
+\end{equation}
+\end{defn} 
+\begin{defn}
+\label{defn:bracket}
+The bracket is defined, for any $a,b \in A,$ as:
+\begin{equation}
+    \label{eq:bracket}
+    \left[a,b\right] = a \circ b - b \circ a?
+\end{equation}
+\end{defn}
+\begin{defn}
+\label{def:lproduct}
+Let $a \in A.$ The left product endomorphism $L_a$ is defined by:
+\begin{equation}
+    \label{eq:la}
+    L_a b = a \circ b, \, b \in A.
+\end{equation}
+\end{defn}
+\begin{prop}
+\label{prop:lie_morphism}
+For any $a,b, \in A:$
+\begin{equation}
+    \label{eq:lie_morphism}
+    \left[ L_a, L_b \right] = L_{[a,b]}.
+\end{equation}
+\end{prop}

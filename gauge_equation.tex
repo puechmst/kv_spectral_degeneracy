@@ -1,0 +1,61 @@
+\section{The gauge equation}
+\begin{prop}
+    \label{prop:gen_nijenhuis}
+    Let $\theta$ be normal and statisfying the gauge equation. Let $D=\nabla^*-\nabla$. Then the tensor:
+    \begin{equation}
+        \label{eq:gen_nijenhuis}
+        \begin{split}
+        T_\theta \colon (X,Y) \mapsto & \left[ \theta X, \theta^*Y \right] - \theta^* \left[ \theta X, Y \right] 
+        - \theta \left[X, \theta^*Y  \right] + \theta^* \theta \left[ X,Y \right]\\
+        & +\theta^* D\left( \theta X, Y \right) - \theta D\left( X, \theta^*Y \right)
+        \end{split}
+    \end{equation}
+    vanishes identically.
+\end{prop} 
+\begin{proof}
+    We must first prove the tensoriality. Let $f \colon M \to \R$ be a smooth function. Since $D$ is known to be 
+    a tensor, there is no need to take the last two terms into account. A direct computation shows that:
+    \begin{equation}
+        T_\theta(fX,Y) = f T_\theta(X,Y) +
+         \left( - \theta^* Y(f) + \theta^* Y(f) + \theta \theta^* Y(f) - \theta^* \theta Y(f) \right) T_\theta(X,Y)
+    \end{equation}
+    Since $\theta$ is normal, $ T_\theta(fX,Y) = f T_\theta(X,Y) $.
+    Now, a similar computation yields:
+    \begin{equation}
+        T_\theta(X,fY) = f T_\theta(X,Y) + 
+        \left( \theta X(f) - \theta^*\theta X(f) - \theta  X(f) + \theta^* \theta X(f) \right)T_\theta(X,Y) = 0
+    \end{equation}
+    proving that $T_\theta$ is a tensor.
+
+    $\nabla^*$ being without torsion:
+    \begin{equation}
+        \begin{split}
+            \left[ \theta X, \theta^* Y \right] & = \nabla^*_{\theta X} \theta^* Y - \nabla^*_{\theta^*Y} \theta X \\
+            & = \theta^* \nabla_{\theta X} Y - \theta \nabla_{\theta^*Y} X \\
+            & = \theta^* \left( \nabla_Y \theta X + \left[ \theta X, Y \right] \right) 
+            - \theta \left( \nabla_X \theta^* Y  + \left[ \theta^*Y, X \right]\right) \\
+        \end{split}
+    \end{equation}
+    Introducing the difference tensor $D \colon (X,Y) \mapsto \nabla_X^* Y - \nabla_X Y$:
+    \begin{equation}
+       \begin{split}
+         \left[ \theta X, \theta^* Y \right]  =&
+           \theta^* \theta \nabla^*_Y X - \theta \theta^* \nabla^*_X Y  - \theta^* D\left( \theta X, Y \right) + \theta D\left( X, \theta^*Y \right)\\
+           & + \theta^* \left[ \theta X, Y \right] + \theta \left[ X, \theta^* Y \right]
+       \end{split} 
+    \end{equation}
+    Since $\theta$ is normal, $\theta^* \theta = \theta \theta^*$, thus:
+    \begin{equation}
+        \left[ \theta X, \theta^* Y \right] = \theta^* \theta \left[ Y,X \right] + \theta^* \left[ \theta X, Y \right] + \theta \left[ X, \theta^* Y \right]
+        -\theta^* D\left( \theta X, Y \right) + \theta D\left( X, \theta^*Y \right)
+    \end{equation}
+    and the claim follows.
+\end{proof}
+\begin{rem}
+    The tensoriality of $T_\theta$ depends critically on the normality of $\theta$. This was already pointed out by 
+    Nijenhuis.
+\end{rem}
+\begin{rem}
+    $T_\theta$ is the Nijenhuis tensor when $\theta$ is skew-symmetric and $\nabla = \nabla^*$. When $\theta$ is normal and satisfies the gauge equation,
+    the above results shows that $-\theta^*D\left(  \theta X, Y\right)+\theta D\left( X,\theta^*Y \right)$ is the Nijenhuis tensor. 
+\end{rem}
