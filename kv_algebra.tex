@@ -59,3 +59,21 @@ For any $a,b, \in A:$
     \left[ L_a, L_b \right] = L_{[a,b]}.
 \end{equation}
 \end{prop}
+\begin{proof}
+    Let $w \in A$. Then:
+    \begin{equation}
+    \left[ L_a, L_b \right]w = a \circ \left( b \circ w \right) - b \circ \left(a \circ w \right).
+    \end{equation}
+    Using the associator, the right hand term can be rewritten as:
+    \begin{equation}
+        \left( a \circ b \right) \circ w - \left( a,b,w \right) - \left( b \circ a \right) \circ w + \left( b,a,w \right) = \left( [a,b] \right)\circ w = L_{[a,b]} w,
+    \end{equation}
+   which concludes the proof. 
+\end{proof}
+The endomorphism $L_a$ extends to a derivation of the tensor algebra $T(A)$ (resp. symmetric algebra $S(A)$) by application of the Liebniz rule:
+\begin{equation}
+    \label{eq:der_la}
+    L_a \left( a_1 \otimes \dots \otimes a_q \right)= \sum_{i=1}^q a_1 \otimes \dots a a_i \dots \otimes a_q.
+\end{equation}
+
+
