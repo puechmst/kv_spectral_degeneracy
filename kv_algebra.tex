@@ -1,4 +1,4 @@
-\section{Koszul-Vinberg algebras}
+\section{A short introduction to Koszul-Vinberg algebras} 
 Koszul-Vinberg algebras, more commonly known as pre-Lie algebras, 
 arise naturally in differential geometry. Let $\left(M ,\nabla \right)$ be a gauge structure with $\nabla$ a torsionless Koszul connection on $M$. A product is defined on $\chi\left(M\right)=\Gamma\left(TM \right)$ by:
 \begin{equation}
@@ -40,7 +40,7 @@ $A$ is said to be a pre-Lie (or a KV-algebra) if equipped with a product $\circ 
 The bracket is defined, for any $a,b \in A,$ as:
 \begin{equation}
     \label{eq:bracket}
-    \left[a,b\right] = a \circ b - b \circ a?
+    \left[a,b\right] = a \circ b - b \circ a.
 \end{equation}
 \end{defn}
 \begin{defn}
@@ -70,10 +70,43 @@ For any $a,b, \in A:$
     \end{equation}
    which concludes the proof. 
 \end{proof}
-The endomorphism $L_a$ extends to a derivation of the tensor algebra $T(A)$ (resp. symmetric algebra $S(A)$) by application of the Liebniz rule:
+The endomorphism $L_a$ extends to a derivation of the symmetric algebra $S(A)$ by application of the Liebniz rule:
 \begin{equation}
     \label{eq:der_la}
-    L_a \left( a_1 \otimes \dots \otimes a_q \right)= \sum_{i=1}^q a_1 \otimes \dots a a_i \dots \otimes a_q.
+    L_a \left( a_1 \otimes \dots \otimes a_q \right)= \sum_{i=1}^q a_1 \otimes \dots a a_i \dots \otimes a_q,
 \end{equation}
+hence there is a Lie algebra morphism $L \colon a \in A \mapsto \text{Der}S\left( A \right)$ by equation \ref{eq:lie_morphism}.
+Now, for any $a \in A$, define:
+\begin{equation}
+    \label{eq:theta_morphism}
+    \Theta_a x = a. x + L_a x, x \in S\left( A \right).
+\end{equation}
+\begin{prop}
+    \label{prop:theta_morphism}
+    $\Theta$ is a Lie algebra morphism from $A$ to $\text{End}(A).$
+\end{prop}
+\begin{proof}
+    By a brute force approach, and since $S(A)$ is commutative:
+    \begin{equation}
+        \begin{split}
+            & \left[ \Theta_a, \Theta_b \right]  x = a .  \Theta_b x + L_a \Theta_b x - b .  \Theta_a x - L_b \Theta_a x \\
+            &= a . b . x + a . L_b x + L_a (b. x) + L_a L_b x - b . a . x - b L_a x - L_b (a . x) - L_b L_a x \\
+            &= a . L_b x + b . L_a x + (a \circ b) . x +  L_a L_b x - b . L_a x - a . L_b x - (b \circ a). x - L_b L_a x \\
+            &= \left( a \circ b - b \circ a \right) . x + \left[ L_a, L_b \right] x \\
+            & = \Theta_{[a,b]} x.
+        \end{split}
+    \end{equation}
+\end{proof}
+$\Theta$ uniquely lifts to a Lie algebra morphism, still denoted by $\Theta$, between $\mathcal{U}(A)$, the universal envelopping algebra of $A$ and $S(A)$.
+Finally, the morphism of graded algebra $ \theta \colon u \in \mathcal{U}(A) \to \Theta_u 1$ is an isomorphism since, for $u=u_1 \otimes \dots \otimes u_q$:
+\begin{equation}
+    \theta(u)=M_{u_1 \otimes \dots \otimes u_q} 1 = u_1 \otimes \dots \otimes u_q + r
+\end{equation}
+with $r$ of degree at most $q-1$, hence vanishing in the graded algebra. Gathering things, the next theorem is proved:
+\begin{thm}[KV Poincaré-Birkhoff-Witt]
+    \label{thm:pbw_prelie}
+    Let $A$ be a pre-Lie algebra and let $\mathcal{U}(A)$ be the universal envelopping algebra of the Lie algebra associated to $A$. There exists an isomorphism 
+$\theta \colon \mathcal{U}(A) \to S(A).$
+\end{thm}
 
 
