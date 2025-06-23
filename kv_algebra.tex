@@ -25,7 +25,7 @@ Obvious from the expression: $R^\nabla\left( X, Y \right) Z = \nabla^2_{X,Y}Z - 
 \end{proof}
 If $\nabla$ is flat, then:
 $\left( X, Y , Z \right) = \left( Y, X, Z \right),$ that is the defining property of a pre-Lie algebra.
-\subsection{Definition}
+\subsection{Some properties of Koszul-VInberg algebras}
 Let $k$ be a field, that will always be $\R$ or $\C$ in the following, and let $A$ be a $k$-vector space. 
 \begin{defn}
 \label{def:kv_def}
@@ -35,14 +35,26 @@ $A$ is said to be a pre-Lie (or a KV-algebra) if equipped with a product $\circ 
     (a,b,c)=(b,a,c), \, (a,b,c)=(a\circ b )\circ c - a \circ (b \circ c).
 \end{equation}
 \end{defn} 
+A pre-Lie algebra has an underlying Lie algebra structure. 
 \begin{defn}
 \label{defn:bracket}
-The bracket is defined, for any $a,b \in A,$ as:
+A bracket is defined, for any $a,b \in A,$ as:
 \begin{equation}
     \label{eq:bracket}
     \left[a,b\right] = a \circ b - b \circ a.
 \end{equation}
 \end{defn}
+\begin{prop}
+    \label{prop:associated_lie}
+    When equipped with the bracket of definition \ref{defn:bracket}, $A$ becomes a Lie algebra.
+\end{prop}
+\begin{proof}
+    The bracket is obviously skew-symmetric. The Jacobi identity reads as:
+    \begin{equation}
+        \label{eq:associated_jacobi}
+        
+    \end{equation}
+\end{proof}
 \begin{defn}
 \label{def:lproduct}
 Let $a \in A.$ The left product endomorphism $L_a$ is defined by:
@@ -108,5 +120,8 @@ with $r$ of degree at most $q-1$, hence vanishing in the graded algebra. Gatheri
     Let $A$ be a pre-Lie algebra and let $\mathcal{U}(A)$ be the universal envelopping algebra of the Lie algebra associated to $A$. There exists an isomorphism 
 $\theta \colon \mathcal{U}(A) \to S(A).$
 \end{thm}
-
+\begin{defn}
+    \label{def:prelie_representation}
+    Let $A$ be a pre_Lie 
+\end{defn}
 
