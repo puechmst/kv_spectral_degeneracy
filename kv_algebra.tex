@@ -1,4 +1,4 @@
-\section{A short introduction to Koszul-Vinberg algebras} 
+\section{Koszul-Vinberg algebras}
 Koszul-Vinberg algebras, more commonly known as pre-Lie algebras, 
 arise naturally in differential geometry. Let $\left(M ,\nabla \right)$ be a gauge structure with $\nabla$ a torsionless Koszul connection on $M$. A product is defined on $\chi\left(M\right)=\Gamma\left(TM \right)$ by:
 \begin{equation}
@@ -25,7 +25,7 @@ Obvious from the expression: $R^\nabla\left( X, Y \right) Z = \nabla^2_{X,Y}Z - 
 \end{proof}
 If $\nabla$ is flat, then:
 $\left( X, Y , Z \right) = \left( Y, X, Z \right),$ that is the defining property of a pre-Lie algebra.
-\subsection{Some properties of Koszul-VInberg algebras}
+\subsection{Definitions}
 Let $k$ be a field, that will always be $\R$ or $\C$ in the following, and let $A$ be a $k$-vector space. 
 \begin{defn}
 \label{def:kv_def}
@@ -35,26 +35,15 @@ $A$ is said to be a pre-Lie (or a KV-algebra) if equipped with a product $\circ 
     (a,b,c)=(b,a,c), \, (a,b,c)=(a\circ b )\circ c - a \circ (b \circ c).
 \end{equation}
 \end{defn} 
-A pre-Lie algebra has an underlying Lie algebra structure. 
-\begin{defn}
-\label{defn:bracket}
-A bracket is defined, for any $a,b \in A,$ as:
+\begin{prop}
+\label{prop:subjacent_lie}
+Let $A$ be a KV algebra. The bracket:
 \begin{equation}
     \label{eq:bracket}
     \left[a,b\right] = a \circ b - b \circ a.
 \end{equation}
-\end{defn}
-\begin{prop}
-    \label{prop:associated_lie}
-    When equipped with the bracket of definition \ref{defn:bracket}, $A$ becomes a Lie algebra.
+provides $A$ with a Lie algebra structure, denoted by $A^{L}.$
 \end{prop}
-\begin{proof}
-    The bracket is obviously skew-symmetric. The Jacobi identity reads as:
-    \begin{equation}
-        \label{eq:associated_jacobi}
-        
-    \end{equation}
-\end{proof}
 \begin{defn}
 \label{def:lproduct}
 Let $a \in A.$ The left product endomorphism $L_a$ is defined by:
@@ -120,8 +109,37 @@ with $r$ of degree at most $q-1$, hence vanishing in the graded algebra. Gatheri
     Let $A$ be a pre-Lie algebra and let $\mathcal{U}(A)$ be the universal envelopping algebra of the Lie algebra associated to $A$. There exists an isomorphism 
 $\theta \colon \mathcal{U}(A) \to S(A).$
 \end{thm}
-\begin{defn}
-    \label{def:prelie_representation}
-    Let $A$ be a pre_Lie 
+\begin{defn}[\cite{bai2008}]
+Let $A$ be a KV algebra. A representation of $A$ on a vector space $V$ is a pair of linear maps $L,R$ from $A$ to $\mathfrak{GL}(V)$ such that $L$ is a Lie algebra morphism 
+from $A^{L}$ to $\mathfrak{gl}(V)$ and $R$ satisfies:
+\begin{equation}
+    \label{eq:kv_representation}
+    R(b)L(a)-R(a)L(b)=R(b)R(a)-R(a \circ b).
+\end{equation}
+A vector space $V$ equipped with a representation $L,R$ is said to be a $KV$-module (or pre-Lie module). 
 \end{defn}
+\begin{notation}
+The action of $L$ (resp. $R$) on an element $v$ of $V$ is conveniently denoted as a left (resp. right) product:
+\[
+L(a)v = a \triangleleft v, \, R(a)v = v \triangleright a \, .
+\]
+\end{notation}
+\begin{rem}
+    Equation \ref{eq:kv_representation} is a weak form of associativity. In fact, the requirements on $L,R$ can be rewritten with associators as:
+    \begin{equation}
+        \label{eq:module_associator}
+        \left( a, b, v \right) = \left( b, a , v \right), \, \left( a, v, b \right) = \left( v, a,b \right), \, a,b \in A, \, v \in V.
+    \end{equation}
+with:
+\begin{equation}
+    \begin{split}
+    &\left( a,b,v \right) = \left( a \circ b \right) \triangleleft v - a \triangleleft b \triangleleft v, \\ 
+    &\left( a, v, b \right) = \left( a \triangleleft v \right) \triangleright b - a \triangleleft \left( v \triangleright b \right) \\
+    &\left( v, a, b \right) = \left( v \triangleright a \right) \triangleright b - v \triangleright \left( a \circ b \right).
+    \end{split}
+\end{equation}
+\end{rem}
+\subsection{Cohomology}
+
+
 
