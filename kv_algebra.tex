@@ -141,5 +141,19 @@ with:
 \end{rem}
 \subsection{Cohomology}
 The reference for this section is \cite{Boyom2002}. 
+\begin{defn}
+    \label{def:kv_complex}
+    Let $V$ be a $KV$-module. For any positive integer $q$, the vector space $C^q\left( A, V \right)$ is $\hom_\R\left( \otimes^q A, V \right).$ It has a natural
+    $KV$-module structure with actions:
+    \begin{equation}
+        \label{eq:kv_cq}
+        \begin{split}
+            & \left( a \triangleleft f \right)\left( a_1 \otimes \dots \otimes a_q \right) = a \triangleleft f\left( a_1 \otimes \dots \otimes a_q \right) - \sum_{i=1}^q f\left( 
+                a_1 \otimes \dots \otimes \left(a \circ a_i\right) \otimes \dots a_q
+             \right) \\
+             & \left( f \triangleright a \right)\left( a_1 \otimes \dots \otimes a_q \right) = f\left( a_1 \otimes \dots \otimes a_q \right) \triangleright a.
+        \end{split}
+    \end{equation}
+\end{defn}
 
 
