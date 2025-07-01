@@ -143,8 +143,8 @@ with:
 The reference for this section is \cite{Boyom2002}. 
 \begin{defn}
     \label{def:kv_complex}
-    Let $V$ be a $KV$-module. For any positive integer $q$, the vector space $C^q\left( A, V \right)$ is $\hom_\R\left( \otimes^q A, V \right).$ It has a natural
-    $KV$-module structure with actions:
+    Let $V$ be a $KV$-module. For any positive integer $q$, let $C^q\left( A, V \right) = \hom_\R\left( \otimes^q A, V \right),$ the vector space of $q$-multilinear $V$-valued maps.
+    It has a natural $KV$-module structure with actions:
     \begin{equation}
         \label{eq:kv_cq}
         \begin{split}
@@ -155,5 +155,26 @@ The reference for this section is \cite{Boyom2002}.
         \end{split}
     \end{equation}
 \end{defn}
-
-
+\begin{defn}
+\label{def:kv_face_insert}
+Let $q$ be a positive integer. The face (resp. insertion) operator is defined by:
+\begin{equation}
+    \label{eq:kv_face}
+    \partial_i \colon a_1 \otimes \dots \otimes a_q = a_1 \otimes \dots \otimes \hat{a}_i \otimes \dots \otimes a_q
+\end{equation}
+resp.
+\begin{equation}
+    \label{eq:kv_insert}
+    \mathcal{I}_i(a) \colon a_1 \otimes \dots \otimes a_q = 
+    \begin{cases}
+        a_1 \otimes \dots  a_{i-1} \otimes a \otimes a_i \otimes \dots \otimes a_q, \, a \in A, \, i=2 \dots q\\
+        a \otimes a_1 \otimes \dots \otimes a_q, \, a \in A, i=1 \\
+        a_1 \otimes \dots \otimes a_q \otimes a, \, a \in A, i=q+1 \\
+    \end{cases}
+\end{equation}
+\end{defn}
+\begin{rem}
+    The notation $\hat{a}_i$ means, as usual, that the factor $i$ is omitted. 
+\end{rem}
+The composition $\partial_i \mathcal{I}_i(a)$ is the identity while $\mathcal{I}_i(a) \partial_i$ replaces the $i$-th element of $a_1 \otimes \dots \otimes a_q$ by $a.$
+If $f \in C^q(A,V)$, then $f \circ \partial_i \in C^{q+1}(A,V)$ and $f \circ \mathcal{I}_i(a) \in C^{q-1}(A,V).$ 
