@@ -178,3 +178,15 @@ resp.
 \end{rem}
 The composition $\partial_i \mathcal{I}_i(a)$ is the identity while $\mathcal{I}_i(a) \partial_i$ replaces the $i$-th element of $a_1 \otimes \dots \otimes a_q$ by $a.$
 If $f \in C^q(A,V)$, then $f \circ \partial_i \in C^{q+1}(A,V)$ and $f \circ \mathcal{I}_i(a) \in C^{q-1}(A,V).$ 
+\begin{defn}
+    \label{def:kv_coboundary}
+    The coboundary operator $\delta^q \colon C^q \left( A,V \right) \to C^{q+1}\left( A,V \right)$ is defined by \cite{Boyom2002}:
+    \begin{equation}
+        \label{eq:coboundary}
+        \delta^q f = \sum_{j=1 \dots q} \left( -1 \right)^j \left[ a_j  \triangleleft \left(f \partial_j\right) + \left(\mathcal{I}_q(a_j) f \partial_{q}\partial_j\right)\triangleright a_{q+1}  \right]
+    \end{equation}
+\end{defn}
+\begin{defn}
+\label{def:kv_cohomology}
+The KV-cohomology of $A$ with coefficient in $V$ is the cohomology of the complex $C^*\left( A,V \right), \delta^*.$
+\end{defn}
