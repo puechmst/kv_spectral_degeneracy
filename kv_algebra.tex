@@ -177,6 +177,14 @@ resp.
     The notation $\hat{a}_i$ means, as usual, that the factor $i$ is omitted. 
 \end{rem}
 The composition $\partial_i \mathcal{I}_i(a)$ is the identity while $\mathcal{I}_i(a) \partial_i$ replaces the $i$-th element of $a_1 \otimes \dots \otimes a_q$ by $a.$
+Other commutations rules are:
+\begin{equation}
+    \label{eq:commutation_face_insertion}
+    \begin{split}
+    & \partial_i I_j(a) = I_{j-1}(a) \partial_i, \, j > i \\
+    & \partial_i I_j(a) = I_j(a) \partial_{i-1}, \, j < i.
+    \end{split}
+\end{equation}
 If $f \in C^q(A,V)$, then $f \circ \partial_i \in C^{q+1}(A,V)$ and $f \circ \mathcal{I}_i(a) \in C^{q-1}(A,V).$ 
 \begin{defn}
     \label{def:kv_coboundary}
