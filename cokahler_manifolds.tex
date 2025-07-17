@@ -110,8 +110,85 @@ We now check:
 
 $$
 \nabla \theta = \theta \nabla^* = \theta(\nabla + D)
-\Rightarrow \nabla \theta = \theta D
+\Rightarrow \nabla \theta = \theta D.
+$$
+Since $\theta$ is constant in coordinates and $\nabla$ is flat:
+
+$$
+\nabla \theta = 0
+\Rightarrow \theta D(X, Y) = 0
+\quad \text{for all } X, Y
 $$
 
+We compute $D(X, Y)$ and $\theta D(X, Y).$ Let $X = X^t \partial_t + X^j \partial_{x^j} + Y^j \partial_{y^j}$, and similarly for $Y$.
+
+Since $\eta(X) = X^t$ and $\phi(X)$ acts only on the $x^j, y^j$ directions, we have:
+
+$$
+D(X, Y) = \phi(Y) X^t + \phi(X) Y^t
+$$
+
+
+Now apply $\theta$ to $D(X, Y)$. Since $\theta$ acts diagonally on the frame $\partial_{x^j}, \partial_{y^j}$, and $\theta(\partial_t) = \lambda_0 \partial_t$, we conclude:
+
+$\theta D(X, Y)=0$ if the coefficients of $\phi(X)$, $\phi(Y)$ lie in the kernel of $\theta$.
+
+We will reinterpret Nicolescu-Martin's the authors $(1, 2)$-tensor field $D$ as defining a pre-Lie algebra product
+$$X\circ Y := D(X,Y),$$
+and choose a skew-symmetric, normal $\theta$ that satisfy the gauge equation with dual connection $\nabla^*=\nabla + D$. Then the gauge equation translates to
+$$(\nabla_X\theta)Y=\omega(X)\theta(Y)+\omega(Y)\theta(X).$$
+We choose $\omega = \eta$. Let local basis be $\xi, E_2,\ldots, E_n$ such that $E_2,\ldots, E_n\in\ker{\eta}.$ Let
+$$\theta=a\eta\otimes\xi+\sum_{i=2}^nb_iE^i\otimes E_i,$$
+where $E^i$ denotes the dual one-forms.\\
+Now we have, $(\nabla_\xi\theta)\xi=2\theta\xi$. On the other hand, 
+$$(\nabla_\xi\theta)\xi=\nabla_\xi(\theta\xi)-\theta(\nabla_\xi\xi)=\nabla_\xi(a\xi)-\theta(\nabla_\xi\xi)=\xi(a)\xi,$$
+because $\nabla\xi=0$. Therefore, $\xi(a)\xi=2a\xi$ i.e. $a(t)=Ae^{2t}$.
+
+
+For $E_j\in\ker{\eta}$ parallel along $\xi$, we have:
+$$(\nabla_\xi\theta)(E_j)=\eta(\xi)\theta(E_j)+\eta(E_j)\theta(\xi)=\theta(E_j)=b_jE_j.$$
+On the other hand,
+$$(\nabla_\xi\theta)(E_j)=\nabla_\xi(\theta(E_j))-\theta(\nabla_\xi E_j)=\nabla_\xi(b_jE_j)-\theta(\nabla_\xi E_j)=\xi(b_j)E_j+b_j\nabla_\xi E_j-\theta(\nabla_\xi E_j).$$
+Therefore, $\xi(b_j)=b_j$, i.e. $b_j(t)=B_je^t.$
+$$(\nabla_{E_k}\theta)(Y)=\eta(Y)\theta(E_k).$$
+On the other hand,
+$$(\nabla_{E_k}\theta)(Y)=\nabla_{E_k}(a\xi)-\theta\nabla_{E_k}\xi=E_k(a)+(a-\theta)\nabla_{E_k}\xi.$$
 \end{ex}
+The associator is given by:
+$$(X,Y,Z)=-\nabla^{*2}_{X,Y}Z+\nabla^2_{X,Y}Z.$$
+\begin{prop}
+For $X,Y\in \chi(M)$, we have:
+$$(X,Y,Z)-(Y,X,Z)=R(X,Y)Z-R^*(X,Y)Z,$$
+where $R$ and $R^*$ denote the curvature of $\nabla$ and $\nabla^*$ respectively.
+\end{prop}
+\begin{proof}
+Follows from $R(X,Y)Z=\nabla^2_{X,Y}Z-\nabla^2_{Y,X}Z$ and $R^*(X,Y)Z=\nabla^{*2}_{X,Y}Z-\nabla^{*2}_{Y,X}Z.$
+\end{proof}
+When the manifold is conjugate symmetric, i.e. when $R=R^*$, we have pre-Lie algebra structure defined.\\
+In terms of the difference tensor $D$, pre-Lie algebra condition is expressed as:
+$$D(D(X,Y),Z)-D(X,D(Y,Z))=D(D(Y,X),Z)-D(Y,D(X,Z)).$$
+Since in our case $\nabla$ and $\nabla^*$ are torsionless, we have $D(X,Y)=D(Y,X)$, that is, the identity
+$$D(X,D(Y,Z))=D(Y,D(X,Z))$$
+holds.\\
+Now, using $D(X,Y)=\eta(X)Y+\eta(Y)X$, the identity becomes:
+$$\eta(Y)\eta(Z)X=\eta(X)\eta(Z)Y.$$
+If $Z=\xi$, it follows:
+$$\eta(Y)X=\eta(X)Y.$$
+Therefore, 
+$$D(X,Y)=2\eta(X)Y=2\eta(Y)X.$$
+The gauge equation becomes:
+$$(\nabla_X\theta)Y=2\eta(X)\theta(Y)=2\eta(Y)\theta(X).$$
+Put $X$ orthogonal to $\xi$, and $Y=\xi$, we get 
+$$\theta(X)=0.$$
+Define a $(1,3)$-tensor $[D,D]$ as:
+$$[D,D](X,Y)Z=[D_X,D_Y]Z=D_XD_YZ-D_YD_XZ.$$
+For $X,Y,Z,W\in\chi(M)$ the following properties hold:
+$$[D,D](X,Y)=-[D,D](Y,X),$$
+$$[D,D](X,Y)Z+[D,D](Y,Z)X+[D,D](Z,X)Y=0,$$
+$$g([D,D](X,Y)Z,W)=-g([D,D](X,Y)W,Z).$$
+\begin{prop}
+Our conditions imply that $[D,D]=0.$
+\end{prop}
+Corollary 3.8. from Opozda's paper stating the same result.
+
 
