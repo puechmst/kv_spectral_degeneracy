@@ -1,2 +1,25 @@
 
 \section{Introduction}
+Koszul–Vinberg algebras (also known as pre-Lie algebras) naturally arise in differential geometry through the use of torsion-free affine connections. When equipped with a gauge structure $(M, \nabla)$, the space of vector fields on a smooth manifold inherits a pre-Lie algebra structure defined by the product $X \circ Y = \nabla_X Y$. Unlike Lie algebras, this structure does not satisfy the Jacobi identity, but instead encodes curvature information through the associator.
+
+In this paper, we study the interaction between pre-Lie algebras, gauge-theoretic structures, and symmetric $(1,1)$-tensor fields that satisfy a compatibility condition known as the gauge equation:
+
+$$
+\nabla \theta = \theta \nabla^*,
+$$
+
+where $\nabla$ and $\nabla^*$ are torsion-free affine connections dual with respect to a Riemannian metric $g$. This equation governs how $\theta$ mediates between two flat (or nearly flat) geometric structures and plays a central role in the construction of differential complexes arising from Koszul–Vinberg (KV) algebras. Furthermore, we study a distinct KV-algebra structure defined not by the connection $\nabla$, but by a symmetric (1,2)-tensor field $D$, defined as the difference between two torsion-free connections: $D := \nabla^* - \nabla$. We consider the product:
+
+$X \circ Y := D(X, Y),$
+
+which is symmetric and defines a valid pre-Lie algebra when $D$ satisfies certain compatibility conditions. In particular, we explore the associated cohomological structure and spectral sequence induced by this KV product.
+
+The central goal is to identify conditions under which the spectral sequence associated to the cohomology of this KV algebra degenerates early. We show that when a symmetric tensor field $\theta$ satisfies a gauge-type condition adapted to $D$, the resulting spectral sequence degenerates at a low stage.
+
+We work within the setting of flat coKähler manifolds, where the underlying geometric structures—such as the Reeb field $\xi$, the contact form $\eta$, and the endomorphism $\phi$—induce a natural splitting of the tangent bundle and allow for explicit computations. In this context, we reinterpret classical gauge equations and deformation tensors relative to the new KV-algebra structure based on $D$, not $\nabla$.
+
+The paper is organized as follows: Section 2 introduces the general theory of KV algebras and their cohomology, adapted to the case where the product is defined by a symmetric tensor $D$. Section 3 introduces a generalized gauge equation and explores conditions under which cochains and higher-order obstructions vanish. Section 4 focuses on flat coKähler manifolds and presents explicit computations showing the degeneracy of the spectral sequence associated to the $D$-based KV algebra.
+
+This reinterpretation of KV-algebra structures and their cohomology reveals a new class of degeneracy results governed by the interplay between geometry (via the coKähler structure), algebra (via $D$), and analysis (via the gauge tensor $\theta$).
+
+This work contributes to the understanding of the geometric meaning behind the gauge equation in differential geometry and its algebraic consequences in the deformation theory and cohomology of pre-Lie algebras.

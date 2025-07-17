@@ -101,7 +101,7 @@ Now, for any $a \in A$, define:
 $\Theta$ uniquely lifts to a Lie algebra morphism, still denoted by $\Theta$, between $\mathcal{U}(A)$, the universal envelopping algebra of $A$ and $S(A)$.
 Finally, the morphism of graded algebra $ \theta \colon u \in \mathcal{U}(A) \to \Theta_u 1$ is an isomorphism since, for $u=u_1 \otimes \dots \otimes u_q$:
 \begin{equation}
-    \theta(u)=M_{u_1 \otimes \dots \otimes u_q} 1 = u_1 \otimes \dots \otimes u_q + r
+    \theta(u)=\Theta{u_1 \otimes \dots \otimes u_q} 1 = u_1 \otimes \dots \otimes u_q + r
 \end{equation}
 with $r$ of degree at most $q-1$, hence vanishing in the graded algebra. Gathering things, the next theorem is proved:
 \begin{thm}[KV Poincaré-Birkhoff-Witt]
@@ -114,7 +114,7 @@ Let $A$ be a KV algebra. A representation of $A$ on a vector space $V$ is a pair
 from $A^{L}$ to $\mathfrak{gl}(V)$ and $R$ satisfies:
 \begin{equation}
     \label{eq:kv_representation}
-    R(b)L(a)-R(a)L(b)=R(b)R(a)-R(a \circ b).
+    \left[R(b),L(a)\right]=R(b)R(a)-R(a \circ b).
 \end{equation}
 A vector space $V$ equipped with a representation $L,R$ is said to be a $KV$-module (or pre-Lie module). 
 \end{defn}
@@ -133,14 +133,14 @@ L(a)v = a \triangleleft v, \, R(a)v = v \triangleright a \, .
 with:
 \begin{equation}
     \begin{split}
-    &\left( a,b,v \right) = \left( a \circ b \right) \triangleleft v - a \triangleleft b \triangleleft v, \\ 
+    &\left( a,b,v \right) = \left( a \circ b \right) \triangleleft v - a \triangleleft \left( b \triangleleft v\right), \\ 
     &\left( a, v, b \right) = \left( a \triangleleft v \right) \triangleright b - a \triangleleft \left( v \triangleright b \right) \\
     &\left( v, a, b \right) = \left( v \triangleright a \right) \triangleright b - v \triangleright \left( a \circ b \right).
     \end{split}
 \end{equation}
 \end{rem}
 \subsection{Cohomology}
-The reference for this section is \cite{Boyom2002}. 
+The references for this section are \cite{Boyom2002,Dzhumadil1999}. 
 \begin{defn}
     \label{def:kv_complex}
     Let $V$ be a $KV$-module. For any positive integer $q$, let $C^q\left( A, V \right) = \hom_\R\left( \otimes^q A, V \right),$ the vector space of $q$-multilinear $V$-valued maps.
@@ -181,8 +181,8 @@ Other commutations rules are:
 \begin{equation}
     \label{eq:commutation_face_insertion}
     \begin{split}
-    & \partial_i I_j(a) = I_{j-1}(a) \partial_i, \, j > i \\
-    & \partial_i I_j(a) = I_j(a) \partial_{i-1}, \, j < i.
+    & \partial_i \mathcal{I}_j(a) = \mathcal{I}_{j-1}(a) \partial_i, \, j > i \\
+    & \partial_i \mathcal{I}_j(a) = \mathcal{I}_j(a) \partial_{i-1}, \, j < i.
     \end{split}
 \end{equation}
 If $f \in C^q(A,V)$, then $f \circ \partial_i \in C^{q+1}(A,V)$ and $f \circ \mathcal{I}_i(a) \in C^{q-1}(A,V).$ 
@@ -191,7 +191,7 @@ If $f \in C^q(A,V)$, then $f \circ \partial_i \in C^{q+1}(A,V)$ and $f \circ \ma
     The coboundary operator $\delta^q \colon C^q \left( A,V \right) \to C^{q+1}\left( A,V \right)$ is defined by \cite{Boyom2002}:
     \begin{equation}
         \label{eq:coboundary}
-        \delta^q f = \sum_{j=1 \dots q} \left( -1 \right)^j \left[ a_j  \triangleleft \left(f \partial_j\right) + \left(\mathcal{I}_q(a_j) f \partial_{q}\partial_j\right)\triangleright a_{q+1}  \right]
+        \delta^q f = \sum_{j=1 \dots q} \left( -1 \right)^j \left[ a_j  \triangleleft \left(f \partial_j\right) +  f\left( \mathcal{I}_q(a_j)\partial_{q}\partial_j\right)\triangleright a_{q+1}  \right]
     \end{equation}
 \end{defn}
 \begin{prop}
@@ -202,6 +202,8 @@ If $f \in C^q(A,V)$, then $f \circ \partial_i \in C^{q+1}(A,V)$ and $f \circ \ma
     \delta^{q+1} \delta^q = 0.
     \end{equation}
 \end{prop}
+The proof of proposition \ref{prop:delta_square} can be done by brute force, as in \cite{Boyom2002}, but a simpler approach through semi-simplicial modules can be found in
+\cite{Boyom2016} and in \cite{Dzhumadil1999}. 
 \begin{defn}
 \label{def:kv_cohomology}
 The KV-cohomology of $A$ with coefficient in $V$ is the cohomology of the complex $C^*\left( A,V \right), \delta^*.$

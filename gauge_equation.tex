@@ -1,7 +1,200 @@
 \section{The gauge equation}
+Let $E$ be a vector bundle on a smooth manifold $M.$ As usual, $\Gamma_E(U)$ denotes the $C^\infty(U)$-module of its smooth sections over an open set $U \subset M.$ Given a pair $V \subset U \subset M$ of open sets, the inclusion map $i_{VU} \colon V \hookrightarrow U$ gives rise to a map of modules $\Gamma_E(i_{VU}) \colon \Gamma_E(U) \to \Gamma_E(V).$ The functor $\Gamma_E$ defined that way is a sheaf, called the sheaf of smooth sections of $E.$
+It is well known \cite{husemoller1994} that if $\nabla$ is a Koszul connection and $\theta$ is an invertible $(1,1)$-tensor, then $\tilde{\nabla} = \theta \nabla \theta^{-1}$ is a Koszul connection.
+Rewriting the above relation gives:
+\begin{equation}
+    \label{eq:invertible_gauge_eq}
+    \theta \nabla = \tilde{\nabla} \theta.
+\end{equation}
+The form \ref{eq:invertible_gauge_eq} is valid even if $\theta$ is not invertible, thus it makes sense to introduce the general gauge equation.
+\begin{defn}
+Let $\left(\nabla^1,\nabla^2\right)$ a pair of Koszul connections. A $(1,1)$-tensor is said to satisfy the gauge equation for $\left(\nabla^1,\nabla^2\right)$ if:
+\begin{equation}
+\label{eq:gauge_eq}
+\nabla^2 \theta = \theta \nabla^1.
+\end{equation}
+\end{defn}
+    The gauge equation is compatible with the sheaf $\Gamma_E.$ Let $U \subset M$ be an open set, $f \in C^\infty(U),$ and $s \in \Gamma_E(U)$ such that $\nabla^2 \theta s = \theta \nabla^1 s.$
+    Then:
+    \begin{equation}
+        \label{eq:sheaf_gauge_equation}
+        \nabla^2 \theta f s = \nabla^2 f \theta s  = \nabla^2(f) \theta s + f \nabla^2 \theta s 
+        = \nabla^1(f) \theta s  + f \theta \nabla^1 s 
+         = \theta \nabla^1 f s.
+    \end{equation}
+It thus make sense to speak about the sheaf of solutions of the gauge equation for $\left(\nabla^1, \nabla^2 \right).$
+Finally, let $\left(E, \nabla^1 \right), \left(F, \nabla^2 \right)$ be gauge structures with $E,F$ bundles on $M$. Koszul connections $\nabla^1,\nabla^2$ can be interpreted as exterior derivatives on (sheaves of) 0-forms. Given a bundle morphism $\theta \colon  E \to F,$ $\theta$ is said to be a solution of the gauge equation if the next diagram commutes:
+\begin{equation}
+    \label{eq:koszul_exterior_der}
+    \begin{tikzcd}
+    \Gamma_E \rar["\nabla^1"] \dar["\theta"] & \Gamma_{T^\star M  \otimes E} \dar["\Id \otimes \theta"]\\
+    \Gamma_F \rar["\nabla^2"] & \Gamma_{T^\star M \otimes F}
+    \end{tikzcd}
+\end{equation}
+This general definition obviously agrees with the previous one. The identity morphism $\Id_E \colon E \to E$ satisfies the gauge equation $\Id \nabla = \nabla \Id$ for any gauge structure $\left(E,\nabla\right)$ and the composition of two bundle morphisms satisfying the gauge equation satisfies again the gauge equation for if $\nabla^2 \theta = \theta \nabla^1$ and $\nabla^3 \eta = \eta \nabla^2$, then:
+\[
+\eta \theta \nabla^1 = \eta \nabla^2 \theta = \nabla^3 \eta \theta.
+\]
+There is thus a category $\gaugecat(M)$ whose objects are gauge structures and morphisms given by solutions of the gauge equation.
+The next proposition is merely an application of definition \ref{eq:gauge_eq}.
+\begin{prop}
+\label{prop:conjugate_connections}
+Let the triple $\left(\nabla_1, \nabla_2,\theta \right)$ be a solution of the gauge equation $\nabla_1 \theta = \theta \nabla_2.$ 
+For any couple $(U,V)$ of bundle automorphism on $E$ (resp.L $F$) the triple:
+\[
+\left( U \nabla_1 U^{-1}, U \theta V^{-1}, V \nabla_2 V^{-1} \right)
+\]
+is a solution of a gauge equation.
+\end{prop}
+As usual, everything can be made local, so basic linear algebra shows that in a suitable local frame, $\theta$ can be reduced to a block diagonal form:
+\begin{equation}
+    \label{eq:reduced_theta}
+    \theta = \left( \begin{array}{c|c} \text{Id} & 0 \\ \hline
+    0 & 0
+    \end{array} \right)
+\end{equation}
+When the manifold $M$ is equipped with a Riemannian metric, there exists a dual connection associated to an arbitrary Koszul connection. 
+\begin{defn}
+    \label{def:conjugate_connection}
+    Let $\nabla$ be an affine connection. Its dual with respect to $g$ is the connection $\nabla^\star$ defined by the relation:
+    \begin{equation}
+    \label{eq:conjugate_connection}
+    \forall Z \in TM, \forall r,s \in \Gamma \left(TM 
+    \right), Z\left( g(r,s) \right) = g\left(\nabla_Z r, s\right) + 
+    g\left( r, \nabla_Z^\star s\right)
+    \end{equation}
+\end{defn}
+
+\begin{defn}
+\label{def:endo_conjugate}
+Let $\theta$ be a bundle morphism on $TM.$ Its (Riemannian) conjugate,
+denoted $\theta^\star$, is the bundle morphism defined by:
+\begin{equation}
+    \label{eq:endo_conjugate}
+    \forall X,Y \in TM, \, g\left( \theta X, Y\right) = 
+    g\left( X, \theta^\star Y\right)
+\end{equation}
+\end{defn}
+\begin{prop}
+\label{prop:inverse_unitary}
+If $U \colon TM \to TM$ is a unitary bundle isomorphism, that is:
+\[
+\forall X,Y \in TM, \, g\left( UX, UY \right) = g(X,Y)
+\]
+Then $U^{-1} = U^\star.$
+\end{prop}
+
+\begin{prop}
+\label{prop:unitary_conjugate}
+For any Koszul connection $\nabla$ and unitary bundle isomorphism $U$ :
+\begin{equation}
+\label{eq:unitary_conjugate}
+\left(U \nabla U^\star\right)^\star = U \nabla^\star U^\star
+\end{equation}
+\end{prop}
+The proof can be found in \cite{boyom2024}.
+\begin{prop}[\cite{boyom2024}]
+\label{prop:unitary_conjugate_gauge}
+If the triple $\left(\nabla,\nabla^+,\theta \right)$ satisfies the gauge equation $\nabla \theta = \theta \nabla^+$, so does  $\left(U \nabla, U^+, U \nabla^+ U^+, U^+ \theta U\right)$ for any unitary isomorphism $U.$
+\end{prop}
+\begin{rem}
+If $\theta$ is normal and satisfies the gauge equation, it is reducible locally to the form
+\begin{equation}
+    \label{eq:reduced_normal_theta}
+    \theta = \left( \begin{array}{c|c} \text{Id} & 0 \\ \hline
+    0 & 0
+    \end{array} \right)
+\end{equation}
+by unitary bundle automorphisms.
+\end{rem}
+\begin{prop}
+\label{prop:parallel_g_tensor}
+Let the triple $\left(\nabla,\nabla^+,\theta \right)$ satisfy the gauge equation $\nabla \theta = \theta \nabla^+.$ Then the tensor:
+\begin{equation}
+    \label{eq:parallel_g_tensor}
+    g_\theta \colon (X,Y) \mapsto g\left( \theta X, Y\right)
+\end{equation}
+is $\nabla$ parallel.
+\end{prop}
+
+Proposition  \ref{prop:parallel_g_tensor} shows that $TM$ can be written as two direct sums:
+\begin{equation}
+    \label{eq:split_tm}
+    TM = \ker \theta \oplus \im \theta , \, TM = \ker \theta^+ \oplus \im \theta^+.
+\end{equation}
+It is clear from proposition \ref{prop:parallel_g_tensor} that if $\theta$ is symmetric, that is $\theta = \theta^+$, the tensor:
+\begin{equation}
+(X,Y) \mapsto \frac{1}{2} g\left( \theta X, Y\right) + g\left( \theta X, Y\right)
+\end{equation}
+is $\nabla$-parallel.
+When $\theta$ is skew symmetric $\theta = -\theta^+$, the same is true for:
+\begin{equation}
+(X,Y) \mapsto \frac{1}{2} g\left( \theta X, Y\right) - g\left( \theta X, Y\right)
+\end{equation}
+In the spirit of the definition of $\gaugecat(M)$, it makes sense to look after a category where morphisms are bundle morphisms $\theta$ such that dual gauge structures $(M,\nabla), (M, \nabla^\star)$ are related if $\theta \nabla = \nabla^\star \theta.$ Things are a little bit more intricate than in the general case, so some extra assumptions must be made.
+\begin{defn}
+    \label{def:flat_morphism}
+    The $\flat \colon TM \to T^\star M$ isomorphism is defined by the relation:
+    \begin{equation}
+        \label{eq:flat_morphism}
+        X^\flat(Y) = g(X, Y), X, Y \in TM.
+    \end{equation}
+\end{defn}
+\begin{defn}
+\label{def:partial_iso}
+Let $E,F$ be two vector bundles on $M$ equipped with respective Riemannian metrics $g_E,g_F.$ A partial isometry from $E$ to $F$ is a bundle morphism $U$ such that the following diagram commutes:
+\begin{equation}
+    \label{eq:partial_iso}
+    \begin{tikzcd}
+        E \ar[r,"{}^\flat"] \ar[d,"U"] & E^\star \\
+        F \ar[r,"{}^\flat"] & F^\star \ar[u,"U^\star"]
+    \end{tikzcd}
+\end{equation}
+\end{defn}
+\begin{rem}
+    Definition \ref{def:partial_iso} is equivalent to the fact that for any $s,s^\prime \in \Gamma(E)$:
+    \[
+    g_F\left(Us, Us^\prime\right) = g_E\left(s,s^\prime\right).
+    \]
+\end{rem}
+\begin{defn}
+\label{def:general_dual_connections}
+Let $U \colon E \to F$ be a partial isometry and $\nabla_2$ be a Koszul connection on $F$. Its dual $\nabla_2^+$ is the connection on $E$ defined by the relation
+\begin{equation}
+    \label{eq:general_dual_connections}
+    U \nabla_2^+ = \nabla_2 U.
+\end{equation}
+\end{defn}
+\begin{defn}
+    \label{def:category_gauge_dual}
+    The category $\gaugecatu(M)$ has objects $(E,\nabla)$ where $\nabla$ is a Koszul connection on $E$ and morphisms $(U, \theta) \colon (E, \nabla_1) \to (F, \nabla_2)$ where $U \colon E \to F$ is a partial isometry, $\theta \colon E \to F$ is a bundle morphism and $\nabla_1 = \nabla_2^+, \nabla_2 \theta = \theta \nabla_1.$
+\end{defn}
+The next two examples are extracted from \cite{boyom2024}. 
+\begin{ex}
+    Take $M = \R^2$ and consider the symplectic 2-form:
+    \begin{equation}
+        \omega \colon (x,y) \mapsto \exp{x} dx \wedge dy.
+    \end{equation}
+    Let $\nabla$ be a Koszul connection such that $\nabla \omega = 0$, $g$ an arbitrary Riemannian metric on $\R^2$ and $\nabla^+$ the dual of $\nabla$ with respect to $g$. Finally, let $\theta$ be the unique $(1,1)$-tensor such that, for all vector fields $X,Y$:
+    \begin{equation}
+        \omega(X,Y) = g(\theta X, Y)
+    \end{equation}
+    Then:
+    \begin{equation}
+        \nabla^+_X \theta Y = \theta \nabla_X Y. 
+    \end{equation}
+\end{ex}
+\begin{ex}
+    Take $M=\mathbb{S}^3$, $\nabla$ a torsion-less connection and $g$ a Riemannian metric. Any solution $\theta$ to the gauge equation:
+    \begin{equation}
+        \nabla^+_X \theta Y = \theta \nabla_X Y. 
+    \end{equation}
+    is either 0 or invertible.
+\end{ex}
+
 \begin{prop}
     \label{prop:gen_nijenhuis}
-    Let $\theta$ be normal and statisfying the gauge equation. Let $D=\nabla^*-\nabla$. Then the tensor:
+    Let $\theta$ be normal and satisfying the gauge equation. Let $D=\nabla^*-\nabla$. Then the tensor:
     \begin{equation}
         \label{eq:gen_nijenhuis}
         \begin{split}
