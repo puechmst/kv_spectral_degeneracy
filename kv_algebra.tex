@@ -98,7 +98,7 @@ Now, for any $a \in A$, define:
         \end{split}
     \end{equation}
 \end{proof}
-$\Theta$ uniquely lifts to a Lie algebra morphism, still denoted by $\Theta$, between $\mathcal{U}(A)$, the universal envelopping algebra of $A$ and $S(A)$.
+$\Theta$ uniquely lifts to a Lie algebra morphism, still denoted by $\Theta$, between $\mathcal{U}(A)$, the universal enveloping algebra of $A$ and $S(A)$.
 Finally, the morphism of graded algebra $ \theta \colon u \in \mathcal{U}(A) \to \Theta_u 1$ is an isomorphism since, for $u=u_1 \otimes \dots \otimes u_q$:
 \begin{equation}
     \theta(u)=\Theta{u_1 \otimes \dots \otimes u_q} 1 = u_1 \otimes \dots \otimes u_q + r
@@ -110,7 +110,7 @@ with $r$ of degree at most $q-1$, hence vanishing in the graded algebra. Gatheri
 $\theta \colon \mathcal{U}(A) \to S(A).$
 \end{thm}
 \begin{defn}[\cite{bai2008}]
-Let $A$ be a KV algebra. A representation of $A$ on a vector space $V$ is a pair of linear maps $L,R$ from $A$ to $\mathfrak{gl}(V)$ such that $L$ is a Lie algebra morphism 
+Let $A$ be a KV algebra. A representation of $A$ on a vector space $V$ is a pair of linear maps $L,R$ from $A$ to $\mathfrak{GL}(V)$ such that $L$ is a Lie algebra morphism 
 from $A^{L}$ to $\mathfrak{gl}(V)$ and $R$ satisfies:
 \begin{equation}
     \label{eq:kv_representation}
@@ -204,6 +204,101 @@ If $f \in C^q(A,V)$, then $f \circ \partial_i \in C^{q+1}(A,V)$ and $f \circ \ma
 \end{prop}
 The proof of proposition \ref{prop:delta_square} can be done by brute force, as in \cite{Boyom2002}, but a simpler approach through semi-simplicial modules can be found in
 \cite{Boyom2016} and in \cite{Dzhumadil1999}. 
+It is also a consequence of the next proposition.
+\begin{defn}
+\label{def:def_theta}
+Let $1 \leq i < q$ be integers. $\theta_i \colon \otimes^q A \to \otimes^{q-1} A$ is defined by:
+\begin{equation}
+    \label{eq:def_theta}
+    \theta_i \left( a_1 \otimes \dots \otimes a_q 
+    \right) = L_{a_i} \partial_i \left( a_1 \otimes \dots \otimes a_q 
+    \right). 
+\end{equation}
+\end{defn}
+\begin{prop}
+\label{prop:theta_simplicial}
+Let $1 < i < j < q$ be three integers. Then, for $\xi \in \otimes^q A$:
+\begin{equation}
+\label{eq:theta_expression}
+    \theta_j \theta_i \xi = \left(L_{(a_i a_{j+1})}  + L_{a_{j+1}}L_{a_i} \right) \partial_i \partial_{j+1} \xi.
+\end{equation}
+Furthermore, the following semi-simplicial identity holds:
+\begin{equation}
+    \label{eq:theta_simplicial}
+    \theta_j \theta_i \xi = \theta_{i} \theta_{j+1} \xi.
+\end{equation}
+\end{prop}
+\begin{proof}
+The first part of the proposition is obtained by writing the action of $\theta_j \theta_i$ on an elementary tensor $a_1 \otimes \dots \otimes a_q :$
+\begin{equation}
+    \theta_j \theta_i \left(a_1 \otimes \dots \otimes a_q\right) = 
+    \sum_{k \neq i} \theta_j \left( a_1 \otimes \dots \otimes a_i a_k \otimes \dots \otimes \hat{a}_i \otimes \dots \otimes a_q \right)
+\end{equation}
+For $k=j+1:$
+\begin{equation}
+    \theta_j \left( a_1 \otimes \dots \otimes a_i a_k \otimes \dots \otimes \hat{a}_i \otimes \dots \otimes a_q \right) = 
+    L_{(a_i a_{j+1})} \partial_i \partial_{j+1} \left(a_1 \otimes \dots \otimes a_q \right),
+\end{equation}
+and for $k \neq j+1:$
+\begin{equation}
+    \theta_j \left( a_1 \otimes \dots \otimes a_i a_k \otimes \dots \otimes \hat{a}_i \otimes \dots \otimes a_q \right) = 
+    L_{a_{j+1}} L_{a_i} \partial_i \partial_{j+1}\left(a_1 \otimes \dots \otimes a_q \right).
+\end{equation}
+Summing the two terms yields the first claim. Now, again by direct computation:
+\begin{equation}
+    \theta_i \theta_{j+1} \xi = 
+    \left(L_{(a_{j+1}a_i)} + L_{a_i}L_{a_{j+1}}\right)\partial_i \partial_{j+1} \xi.
+\end{equation}
+The difference $ \left(\theta_j \theta_i  - \theta_{i} \theta_{j+1}\right) \xi$ computes as:
+\begin{equation}
+    \left(L_{[a_i,a_{j+1}]} - \left[L_{a_i},L_{a_{j+1}}\right]\right)\partial_i \partial_{j+1} \xi = 0.
+\end{equation}
+\end{proof}
+The same scheme can be applied to the operator:
+\begin{equation}
+    \label{eq:first_term_delta}
+    \eta_i \colon f \in C^q(A,V) \to a_i \triangleleft \left( f \partial_i \right) = L_{a_i}\left( f \partial_i \right).
+\end{equation}
+to obtain the next proposition:
+\begin{prop}
+\label{prop:eta_simplicial}
+Let $1 < i < j < q$ be three integers and $f \in C^q(A,V)$. Then:
+\begin{equation}
+\label{eq:eta_expression}
+    \eta_j \eta_i f = \left(L_{(a_i a_{j+1})}  + L_{a_{j+1}}L_{a_i} \right)\left(f \partial_i \partial_{j+1} \right).
+\end{equation}
+Furthermore, the following semi-simplicial identity holds:
+\begin{equation}
+    \label{eq:eta_simplicial}
+    \eta_j \eta_i f = \eta_{i} \eta_{j+1} f.
+\end{equation}
+\end{prop}
+\begin{rem}
+    It is quite interesting to note that the semi-simplicial identities for $\theta_i$ (resp. $\eta_i$) are due to the fact that the operator $L_a, a \in A $ acting on $\otimes^q A$ (resp. $C^q(A,V)$) is a Lie algebra representation. 
+\end{rem}
+Finally, the second term in the expression of $\delta^q$ can be written as an operator:
+\begin{equation}
+    \label{eq:rho_operator}
+    \rho_i \colon f \in C^q(A,V) \mapsto R_{a_{q+1}} f\left(\mathcal{I}_q(a_i)\partial_q \partial_i\right)
+\end{equation}
+also satisfies a semi-simplicial property:
+\begin{equation}
+    \label{eq:rho_semi_simplicial}
+    \begin{split}
+    &\rho_j \rho_i + \rho_j \eta_i + \eta_j \rho_i - \left( \rho_i \rho_{j+1} + \rho_i \eta_{j+1} + \eta_i \rho_{j+1} \right) = \\
+    &\left[ R_{a_{q+1}},L_{a_i},\right] - R_{a_{q+1}}R_{a_i} -R_{a_{q+1}a_i}  \\
+    &-\left[ R_{a_{q+1}},L_{a_{j+1}},\right] - R_{a_{q+1}}R_{a_{j+1}}+ R_{a_{q+1}a_{j+1}}  = 0.
+    \end{split}
+\end{equation}
+\begin{rem}
+Here again, the semi-simplicial identity depends on the defining relations of a KV module. In the expression of $\delta^q$, both terms have a clear interpretation, a fact that is often overlooked.
+\end{rem}
+Gathering things together:
+\begin{equation}
+    \label{eq:delta_semi_simplicial}
+    \delta^{q+1}\delta^q = 0.
+\end{equation}
+
 \begin{defn}
 \label{def:kv_cohomology}
 The KV-cohomology of $A$ with coefficient in $V$ is the cohomology of the complex $C^*\left( A,V \right), \delta^*.$
