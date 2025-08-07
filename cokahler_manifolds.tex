@@ -73,122 +73,93 @@ $$
 In dimension 2, let $A(\partial_x, \partial_x) = \partial_y$. Then $\theta(\partial_y) = 0$ is required. Thus, $\mu = 0$ is forced.
 \end{ex}
 \begin{ex}
-On $M = S^1 \times \mathbb{R}^4$ we choose coordinates 
-$$
-(t, x^1, y^1, x^2, y^2)
-$$.
-We define metric
-$$
-g = dt^2 + (dx^1)^2 + (dy^1)^2 + (dx^2)^2 + (dy^2)^2,
-$$
-and the following coK\"{a}hler structure. Reeb vector field is $\xi = \partial_t$, a contact one-form $\eta = dt$, and structure tensor $\phi$:
-$$
-  \begin{aligned}
-  \phi(\partial_{x^1}) &= \partial_{y^1}, & \phi(\partial_{y^1}) &= -\partial_{x^1}, \\
-  \phi(\partial_{x^2}) &= \partial_{y^2}, & \phi(\partial_{y^2}) &= -\partial_{x^2}, \\
-  \phi(\partial_t) &= 0.
-  \end{aligned}
-  $$
-Let $\nabla$ denote a flat, torsionless connection on $M$. We now define tensor
-$$
-D(X, Y) := \phi(Y) \eta(X) + \phi(X) \eta(Y).
-$$
-This $D$ is symmetric and compatible with the coKähler structure.\\
-Now, the dual connection (flat and torsionless) of $\nabla$ with respect to $g$ is defined by 
-$$\nabla^*:=\nabla + D.$$
-We define a symmetric tensor $\theta$:
-$$
-\theta = \lambda_0 \, \partial_t \otimes dt
-+ \lambda_1 \, \partial_{x^1} \otimes dx^1
-+ \mu_1 \, \partial_{y^1} \otimes dy^1
-+ \lambda_2 \, \partial_{x^2} \otimes dx^2
-+ \mu_2 \, \partial_{y^2} \otimes dy^2
-$$
+Let $(M, \varphi, \xi, \eta, g)$ be a flat coKähler manifold with local orthonormal frame $\{\xi, E_2, \ldots, E_n\}$ satisfying $\eta(\xi) = 1$, $\eta(E_j) = 0$, and let $\nabla$ denote the flat, torsion-free Levi-Civita connection. Define the symmetric $(1,1)$-tensor
+\[
+\theta = a(t)\, \eta \otimes \xi + \sum_{j=2}^n b_j(t)\, E^j \otimes E_j,
+\]
+where $E^j$ are the dual $1$-forms of $E_j$, and $\theta$ is time-dependent only. Assume $E_j$ are parallel along $\xi$, i.e., $\nabla_\xi E_j = 0$.
 
-This $\theta$ is symmetric with respect to $g$, and constant in the coordinate basis.\\
-We now check:
+We verify the gauge-type condition
+\[
+(\nabla_X \theta)(Y) = \eta(Y)\theta(X) + \eta(X)\theta(Y),
+\]
+for all vector fields $X, Y$ on $M$.
 
-$$
-\nabla \theta = \theta \nabla^* = \theta(\nabla + D)
-\Rightarrow \nabla \theta = \theta D.
-$$
-Since $\theta$ is constant in coordinates and $\nabla$ is flat:
+\begin{itemize}
+\item For $X = Y = \xi$:
+\[
+(\nabla_\xi \theta)(\xi) = \nabla_\xi(\theta(\xi)) - \theta(\nabla_\xi \xi) = \nabla_\xi(a(t)\xi) = a'(t)\xi.
+\]
+On the other hand, the right-hand side gives $2a(t)\xi$. Therefore,
+\[
+a'(t) = 2a(t) \quad \Rightarrow \quad a(t) = A e^{2t}.
+\]
 
-$$
-\nabla \theta = 0
-\Rightarrow \theta D(X, Y) = 0
-\quad \text{for all } X, Y
-$$
+\item For $X = \xi$, $Y = E_j$:
+\[
+(\nabla_\xi \theta)(E_j) = \nabla_\xi(b_j(t) E_j) = b_j'(t) E_j,
+\]
+\[
+\eta(E_j) = 0, \quad \eta(\xi) = 1 \Rightarrow \eta(Y)\theta(\xi) + \eta(X)\theta(Y) = \theta(E_j).
+\]
+Thus,
+\[
+b_j'(t) = b_j(t) \quad \Rightarrow \quad b_j(t) = B_j e^t.
+\]
 
-We compute $D(X, Y)$ and $\theta D(X, Y).$ Let $X = X^t \partial_t + X^j \partial_{x^j} + Y^j \partial_{y^j}$, and similarly for $Y$.
+\item For $X = E_k$, $Y$ arbitrary:
+The gauge condition becomes:
+\[
+(\nabla_{E_k} \theta)(Y) = \eta(Y)\theta(E_k).
+\]
+Compute the left-hand side:
+\[
+(\nabla_{E_k} \theta)(Y) = \nabla_{E_k}(\theta(Y)) - \theta(\nabla_{E_k} Y).
+\]
+For $Y = \xi$:
+\[
+(\nabla_{E_k} \theta)(\xi) = E_k(a)\xi + a \nabla_{E_k} \xi - \theta(\nabla_{E_k} \xi).
+\]
+Equating both sides:
+\[
+E_k(a)\xi + (a - \theta)\nabla_{E_k} \xi = \theta(E_k).
+\]
+Thus, either $\nabla_{E_k} \xi = 0$ and $E_k(a) = 0$ (implying $\theta(E_k) = 0$), or $\theta$ must be chosen to satisfy:
+\[
+\theta(E_k) = E_k(a)\xi + (a - \theta)(\nabla_{E_k} \xi).
+\]
+\end{itemize}
 
-Since $\eta(X) = X^t$ and $\phi(X)$ acts only on the $x^j, y^j$ directions, we have:
-
-$$
-D(X, Y) = \phi(Y) X^t + \phi(X) Y^t
-$$
-
-
-Now apply $\theta$ to $D(X, Y)$. Since $\theta$ acts diagonally on the frame $\partial_{x^j}, \partial_{y^j}$, and $\theta(\partial_t) = \lambda_0 \partial_t$, we conclude:
-
-$\theta D(X, Y)=0$ if the coefficients of $\phi(X)$, $\phi(Y)$ lie in the kernel of $\theta$.
-
-We will reinterpret Nicolescu-Martin's the authors $(1, 2)$-tensor field $D$ as defining a pre-Lie algebra product
-$$X\circ Y := D(X,Y),$$
-and choose a skew-symmetric, normal $\theta$ that satisfy the gauge equation with dual connection $\nabla^*=\nabla + D$. Then the gauge equation translates to
-$$(\nabla_X\theta)Y=\omega(X)\theta(Y)+\omega(Y)\theta(X).$$
-We choose $\omega = \eta$. Let local basis be $\xi, E_2,\ldots, E_n$ such that $E_2,\ldots, E_n\in\ker{\eta}.$ Let
-$$\theta=a\eta\otimes\xi+\sum_{i=2}^nb_iE^i\otimes E_i,$$
-where $E^i$ denotes the dual one-forms.\\
-Now we have, $(\nabla_\xi\theta)\xi=2\theta\xi$. On the other hand, 
-$$(\nabla_\xi\theta)\xi=\nabla_\xi(\theta\xi)-\theta(\nabla_\xi\xi)=\nabla_\xi(a\xi)-\theta(\nabla_\xi\xi)=\xi(a)\xi,$$
-because $\nabla\xi=0$. Therefore, $\xi(a)\xi=2a\xi$ i.e. $a(t)=Ae^{2t}$.
-
-
-For $E_j\in\ker{\eta}$ parallel along $\xi$, we have:
-$$(\nabla_\xi\theta)(E_j)=\eta(\xi)\theta(E_j)+\eta(E_j)\theta(\xi)=\theta(E_j)=b_jE_j.$$
-On the other hand,
-$$(\nabla_\xi\theta)(E_j)=\nabla_\xi(\theta(E_j))-\theta(\nabla_\xi E_j)=\nabla_\xi(b_jE_j)-\theta(\nabla_\xi E_j)=\xi(b_j)E_j+b_j\nabla_\xi E_j-\theta(\nabla_\xi E_j).$$
-Therefore, $\xi(b_j)=b_j$, i.e. $b_j(t)=B_je^t.$
-$$(\nabla_{E_k}\theta)(Y)=\eta(Y)\theta(E_k).$$
-On the other hand,
-$$(\nabla_{E_k}\theta)(Y)=\nabla_{E_k}(a\xi)-\theta\nabla_{E_k}\xi=E_k(a)+(a-\theta)\nabla_{E_k}\xi.$$
+This example demonstrates how exponential time-dependent components of $\theta$ can satisfy the gauge-type condition on flat coKähler manifolds under appropriate geometric constraints.
 \end{ex}
-The associator is given by:
-$$(X,Y,Z)=-\nabla^{*2}_{X,Y}Z+\nabla^2_{X,Y}Z.$$
-\begin{prop}
-For $X,Y\in \chi(M)$, we have:
-$$(X,Y,Z)-(Y,X,Z)=R(X,Y)Z-R^*(X,Y)Z,$$
-where $R$ and $R^*$ denote the curvature of $\nabla$ and $\nabla^*$ respectively.
-\end{prop}
-\begin{proof}
-Follows from $R(X,Y)Z=\nabla^2_{X,Y}Z-\nabla^2_{Y,X}Z$ and $R^*(X,Y)Z=\nabla^{*2}_{X,Y}Z-\nabla^{*2}_{Y,X}Z.$
-\end{proof}
-When the manifold is conjugate symmetric, i.e. when $R=R^*$, we have pre-Lie algebra structure defined.\\
-In terms of the difference tensor $D$, pre-Lie algebra condition is expressed as:
-$$D(D(X,Y),Z)-D(X,D(Y,Z))=D(D(Y,X),Z)-D(Y,D(X,Z)).$$
-Since in our case $\nabla$ and $\nabla^*$ are torsionless, we have $D(X,Y)=D(Y,X)$, that is, the identity
-$$D(X,D(Y,Z))=D(Y,D(X,Z))$$
-holds.\\
-Now, using $D(X,Y)=\eta(X)Y+\eta(Y)X$, the identity becomes:
-$$\eta(Y)\eta(Z)X=\eta(X)\eta(Z)Y.$$
-If $Z=\xi$, it follows:
-$$\eta(Y)X=\eta(X)Y.$$
-Therefore, 
-$$D(X,Y)=2\eta(X)Y=2\eta(Y)X.$$
-The gauge equation becomes:
-$$(\nabla_X\theta)Y=2\eta(X)\theta(Y)=2\eta(Y)\theta(X).$$
-Put $X$ orthogonal to $\xi$, and $Y=\xi$, we get 
-$$\theta(X)=0.$$
-Define a $(1,3)$-tensor $[D,D]$ as:
-$$[D,D](X,Y)Z=[D_X,D_Y]Z=D_XD_YZ-D_YD_XZ.$$
-For $X,Y,Z,W\in\chi(M)$ the following properties hold:
-$$[D,D](X,Y)=-[D,D](Y,X),$$
-$$[D,D](X,Y)Z+[D,D](Y,Z)X+[D,D](Z,X)Y=0,$$
-$$g([D,D](X,Y)Z,W)=-g([D,D](X,Y)W,Z).$$
-\begin{prop}
-Our conditions imply that $[D,D]=0.$
-\end{prop}
-Corollary 3.8. from Opozda's paper stating the same result.
+\begin{ex}
 
+We now present a nontrivial example where the tensor field $\theta$ depends polynomially on the coordinate $t$ and satisfies the gauge equation $\nabla \theta = \theta \nabla^*$, but only after modifying the background geometry. This illustrates the necessity of adjusting the difference tensor $D$ when seeking polynomial solutions in $\theta$.
+
+Let $M = S^1 \times \mathbb{R}^{2n}$ with coordinates $(t, x_1, y_1, \ldots, x_n, y_n)$ and flat coKähler structure as in previous examples. Define the symmetric $(1,1)$-tensor field
+\[
+\theta = a(t)\, \eta \otimes \xi + \sum_{j=1}^n \left( b_j(t)\, dx_j \otimes \partial_{x_j} + c_j(t)\, dy_j \otimes \partial_{y_j} \right),
+\]
+where the coefficient functions are taken to be polynomials in $t$, e.g., $a(t) = A t^k$, $b_j(t) = B_j t^{\ell_j}$, $c_j(t) = C_j t^{m_j}$ for constants $A, B_j, C_j$ and non-negative integers $k, \ell_j, m_j$.
+
+Assume the connection $\nabla$ is flat and torsion-free, so that $\nabla \theta = \partial_t \theta$. In the previous examples, a constant $\theta$ sufficed to make $\nabla \theta = 0$ and the gauge equation reduced to $\theta D = 0$. However, for this variable $\theta$, the equation $\nabla \theta = \theta D$ becomes
+\[
+\frac{d}{dt} \theta = \theta D(\partial_t, \cdot),
+\]
+which imposes strong constraints on $D$.
+
+To satisfy this equation, we define a non-flat difference tensor:
+\[
+D(X,Y) := \eta(X)\, \varphi(Y) + t \cdot \varphi(X)\, \eta(Y).
+\]
+We compute:
+\[
+\partial_t b_j(t) = t \cdot b_j(t) \quad \Rightarrow \quad b_j(t) = B_j \exp\left(\frac{t^2}{2}\right),
+\]
+so true polynomial solutions do not arise. However, for $b_j(t) = B_j t$, we find that:
+\[
+\partial_t b_j(t) = B_j = t \cdot b_j(t) \quad \Leftrightarrow \quad t = 1,
+\]
+which is only valid on a slice of $M$. Thus, a  polynomial solution is only compatible with the gauge equation if $D$ is choosen. 
+\end{ex}
 
