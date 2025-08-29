@@ -98,7 +98,7 @@ For any Koszul connection $\nabla$ and unitary bundle isomorphism $U$ :
 The proof can be found in \cite{boyom2024}.
 \begin{prop}[\cite{boyom2024}]
 \label{prop:unitary_conjugate_gauge}
-If the triple $\left(\nabla,\nabla^+,\theta \right)$ satisfies the gauge equation $\nabla \theta = \theta \nabla^+$, so does  $\left(U \nabla, U^+, U \nabla^+ U^+, U^+ \theta U\right)$ for any unitary isomorphism $U.$
+If the triple $\left(\nabla,\nabla^\star,\theta \right)$ satisfies the gauge equation $\nabla \theta = \theta \nabla^\star$, so does  $\left(U \nabla, U^\star, U \nabla^\star U^\star, U^\star \theta U\right)$ for any unitary isomorphism $U.$
 \end{prop}
 \begin{rem}
 If $\theta$ is normal and satisfies the gauge equation, it is reducible locally to the form
@@ -112,7 +112,7 @@ by unitary bundle automorphisms.
 \end{rem}
 \begin{prop}
 \label{prop:parallel_g_tensor}
-Let the triple $\left(\nabla,\nabla^+,\theta \right)$ satisfy the gauge equation $\nabla \theta = \theta \nabla^+.$ Then the tensor:
+Let the triple $\left(\nabla,\nabla^\star,\theta \right)$ satisfy the gauge equation $\nabla \theta = \theta \nabla^\star.$ Then the tensor:
 \begin{equation}
     \label{eq:parallel_g_tensor}
     g_\theta \colon (X,Y) \mapsto g\left( \theta X, Y\right)
@@ -123,14 +123,14 @@ is $\nabla$ parallel.
 Proposition  \ref{prop:parallel_g_tensor} shows that $TM$ can be written as two direct sums:
 \begin{equation}
     \label{eq:split_tm}
-    TM = \ker \theta \oplus \im \theta , \, TM = \ker \theta^+ \oplus \im \theta^+.
+    TM = \ker \theta \oplus \im \theta^\star , \, TM = \ker \theta^\star \oplus \im \theta.
 \end{equation}
-It is clear from proposition \ref{prop:parallel_g_tensor} that if $\theta$ is symmetric, that is $\theta = \theta^+$, the tensor:
+It is clear from proposition \ref{prop:parallel_g_tensor} that if $\theta$ is symmetric, that is $\theta = \theta^\star$, the tensor:
 \begin{equation}
 (X,Y) \mapsto \frac{1}{2} g\left( \theta X, Y\right) + g\left( \theta X, Y\right)
 \end{equation}
 is $\nabla$-parallel.
-When $\theta$ is skew symmetric $\theta = -\theta^+$, the same is true for:
+When $\theta$ is skew symmetric $\theta = -\theta^\star$, the same is true for:
 \begin{equation}
 (X,Y) \mapsto \frac{1}{2} g\left( \theta X, Y\right) - g\left( \theta X, Y\right)
 \end{equation}
@@ -162,15 +162,15 @@ Let $E,F$ be two vector bundles on $M$ equipped with respective Riemannian metri
 \end{rem}
 \begin{defn}
 \label{def:general_dual_connections}
-Let $U \colon E \to F$ be a partial isometry and $\nabla_2$ be a Koszul connection on $F$. Its dual $\nabla_2^+$ is the connection on $E$ defined by the relation
+Let $U \colon E \to F$ be a partial isometry and $\nabla_2$ be a Koszul connection on $F$. Its dual $\nabla_2^\star$ is the connection on $E$ defined by the relation
 \begin{equation}
     \label{eq:general_dual_connections}
-    U \nabla_2^+ = \nabla_2 U.
+    U \nabla_2^\star = \nabla_2 U.
 \end{equation}
 \end{defn}
 \begin{defn}
     \label{def:category_gauge_dual}
-    The category $\gaugecatu(M)$ has objects $(E,\nabla)$ where $\nabla$ is a Koszul connection on $E$ and morphisms $(U, \theta) \colon (E, \nabla_1) \to (F, \nabla_2)$ where $U \colon E \to F$ is a partial isometry, $\theta \colon E \to F$ is a bundle morphism and $\nabla_1 = \nabla_2^+, \nabla_2 \theta = \theta \nabla_1.$
+    The category $\gaugecatu(M)$ has objects $(E,\nabla)$ where $\nabla$ is a Koszul connection on $E$ and morphisms $(U, \theta) \colon (E, \nabla_1) \to (F, \nabla_2)$ where $U \colon E \to F$ is a partial isometry, $\theta \colon E \to F$ is a bundle morphism and $\nabla_1 = \nabla_2^\star, \nabla_2 \theta = \theta \nabla_1.$
 \end{defn}
 The next two examples are extracted from \cite{boyom2024}. 
 \begin{ex}
@@ -178,19 +178,19 @@ The next two examples are extracted from \cite{boyom2024}.
     \begin{equation}
         \omega \colon (x,y) \mapsto \exp{x} dx \wedge dy.
     \end{equation}
-    Let $\nabla$ be a Koszul connection such that $\nabla \omega = 0$, $g$ an arbitrary Riemannian metric on $\R^2$ and $\nabla^+$ the dual of $\nabla$ with respect to $g$. Finally, let $\theta$ be the unique $(1,1)$-tensor such that, for all vector fields $X,Y$:
+    Let $\nabla$ be a Koszul connection such that $\nabla \omega = 0$, $g$ an arbitrary Riemannian metric on $\R^2$ and $\nabla^\star$ the dual of $\nabla$ with respect to $g$. Finally, let $\theta$ be the unique $(1,1)$-tensor such that, for all vector fields $X,Y$:
     \begin{equation}
         \omega(X,Y) = g(\theta X, Y)
     \end{equation}
     Then:
     \begin{equation}
-        \nabla^+_X \theta Y = \theta \nabla_X Y. 
+        \nabla^\star_X \theta Y = \theta \nabla_X Y. 
     \end{equation}
 \end{ex}
 \begin{ex}
     Take $M=\mathbb{S}^3$, $\nabla$ a torsion-less connection and $g$ a Riemannian metric. Any solution $\theta$ to the gauge equation:
     \begin{equation}
-        \nabla^+_X \theta Y = \theta \nabla_X Y. 
+        \nabla^\star_X \theta Y = \theta \nabla_X Y. 
     \end{equation}
     is either 0 or invertible.
 \end{ex}

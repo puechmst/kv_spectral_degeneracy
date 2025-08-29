@@ -163,3 +163,361 @@ so true polynomial solutions do not arise. However, for $b_j(t) = B_j t$, we fin
 which is only valid on a slice of $M$. Thus, a  polynomial solution is only compatible with the gauge equation if $D$ is choosen. 
 \end{ex}
 
+In the statistical coKähler setting we define, the structure tensor $\varphi$ is shown to satisfy the gauge equation $\nabla \varphi = \varphi \nabla^*$. This is a nontrivial and highly constrained equation in general, but here it emerges naturally from the compatibility condition on the difference tensor $D$. The result provides a canonical geometric solution to the gauge equation, allowing us to build Koszul–Vinberg double complexes and spectral sequences with intrinsic geometric meaning. This places the coKähler structure alongside holomorphic statistical geometry as a setting where deep gauge-theoretic phenomena can be studied naturally.
+
+\begin{defn}
+A coKähler statistical structure on a smooth manifold $M^{2n+1}$ is a quadruple $(\nabla, g, \varphi, \xi)$ such that:
+\begin{enumerate}
+    \item \((g, \varphi, \xi, \eta)\) defines a coKähler structure on \(M\), with \(\eta = g(\cdot, \xi)\),
+    \item \(\nabla\) is a torsion-free affine connection, and the pair \((\nabla, g)\) defines a statistical structure (i.e., there exists a dual torsion-free connection \(\nabla^*\) such that
+    \[
+    X \cdot g(Y, Z) = g(\nabla_X Y, Z) + g(Y, \nabla^*_X Z)),
+    \]
+    \item The difference tensor \(D = \nabla - \nabla^{g}\) satisfies the compatibility condition:
+    \[
+    D(X, \varphi Y) + \varphi D(X, Y) = 0,
+    \]
+    for all vector fields \(X, Y\).
+\end{enumerate}
+\end{defn}
+\begin{prop}
+Let \((\nabla, g, \varphi, \xi)\) be a statistical coKähler structure on a manifold \(M\).
+Then the structure tensor \(\varphi\) satisfies the gauge equation:
+\[
+\nabla_X \varphi = \varphi \nabla^*_X \quad \text{for all } X \in TM.
+\]
+\end{prop}
+\begin{proof}
+Let \(D = \nabla - \nabla^{g}\) be the difference tensor between the affine connection \(\nabla\) and the Levi-Civita connection \(\nabla^{g}\), and let \(\nabla^* = 2\nabla^{g} - \nabla\) be the dual connection with respect to \(g\). Then for any vector fields \(X, Y\), we compute:
+\[
+\begin{aligned}
+\nabla_X(\varphi Y) - \varphi(\nabla^*_X Y)
+&= \left[\nabla^{g}_X(\varphi Y) + D(X, \varphi Y)\right] - \varphi\left[\nabla^{g}_X Y - D(X, Y)\right] \\
+&= (\nabla^{g}_X \varphi)Y + D(X, \varphi Y) + \varphi D(X, Y).
+\end{aligned}
+\]
+Since the coKähler structure satisfies \(\nabla^{g} \varphi = 0\), and by assumption \(D(X, \varphi Y) + \varphi D(X, Y) = 0\), we conclude:
+\[
+\nabla_X(\varphi Y) = \varphi(\nabla^*_X Y),
+\]
+which is the gauge equation.
+\end{proof}
+\begin{prop}
+Let \((\nabla, g, \varphi, \xi)\) be a statistical coKähler structure on a manifold \(M\).
+Then, the tensor expression
+\[
+-\varphi^* D(\varphi X, Y) + \varphi D(X, \varphi^* Y)
+\]
+vanishes identically for all vector fields \(X, Y\), where \(\varphi^* = -\varphi\) is the \(g\)-adjoint of \(\varphi\). In particular, the corresponding Nijenhuis-type tensor from Remark 3.4 vanishes identically.
+\end{prop}
+\begin{rem}
+This result shows that the coKähler structure tensor \(\varphi\) is a canonical gauge-compatible tensor in the sense of Section 3. Its normality and skew-symmetry, together with the statistical compatibility condition on \(D\), ensure the vanishing of the associated Nijenhuis-type tensor. This places \(\varphi\) on the same footing as complex structures in holomorphic statistical manifolds, providing a natural source of geometric gauge solutions and structured double complexes.
+\end{rem}
+On a $(2n+1)$-dimensional coKähler manifold 
+\((M,\varphi,\xi,\eta,g)\), there is the canonical orthogonal splitting
+\[
+TM = \mathcal{D} \oplus \langle \xi \rangle,
+\qquad \mathcal{D} = \ker \eta,
+\]
+where $\mathcal{D}$ is the $2n$-dimensional distribution orthogonal to the Reeb vector field $\xi$.
+In this adapted decomposition, the structure tensor $\varphi$ satisfies
+\[
+\varphi(\xi) = 0, \qquad \varphi^2|_{\mathcal{D}} = -\mathrm{Id}_{\mathcal{D}},
+\]
+so that $\varphi$ induces an almost complex structure on $\mathcal{D}$.
+
+We use a local $g$--orthonormal frame adapted to the splitting 
+$TM = \mathcal{D} \oplus \langle \xi \rangle$:
+\[
+\{\xi, E_1, \dots, E_{2n}\}, \qquad E_{2k} = J E_{2k-1}, \quad k=1,\dots,n,
+\]
+so that any vector $v \in T_p M$ decomposes as
+\[
+v = \big(v_{\mathcal{D}}, v_{\xi}\big),
+\]
+with $v_{\mathcal{D}} \in \mathcal{D}_p$ and $v_{\xi} \in \langle \xi_p \rangle$.
+
+In block form we may write
+\[
+\varphi = 
+\begin{pmatrix}
+J & 0 \\[4pt]
+0 & 0
+\end{pmatrix},
+\qquad 
+\text{acting on }
+\begin{pmatrix}
+v_{\mathcal{D}} \\[2pt]
+v_{\xi}
+\end{pmatrix},
+\]
+where $J^2 = -\mathrm{Id}_{\mathcal{D}}$ and $v_{\mathcal{D}} \in \mathcal{D}$, 
+$v_{\xi} \in \langle \xi \rangle$.
+
+We can write a general $(1,1)$--tensor $\theta$ (candidate gauge solution) 
+in block form with respect to the orthogonal splitting 
+$TM = \mathcal{D} \oplus \langle \xi \rangle$ as
+\[
+\theta \;=\; 
+\begin{pmatrix}
+B & u \\[4pt]
+v^{\top} & a
+\end{pmatrix},
+\]
+where:
+\begin{itemize}
+    \item $B : \mathcal{D} \to \mathcal{D}$ is the restriction of $\theta$ to $\mathcal{D}$
+    (a $2n\times 2n$ matrix in a chosen basis),
+    \item $u : \langle \xi \rangle \to \mathcal{D}$ is given by $u = \pi_{\mathcal{D}} \theta(\xi)$,
+    i.e.\ a column vector in $\mathcal{D}$ representing the $\mathcal{D}$--component of $\theta(\xi)$,
+    \item $v^{\top} : \mathcal{D} \to \langle \xi \rangle$ is the linear functional 
+    $v(Y) = g(\theta(Y), \xi)$, i.e.\ a row vector representing the $\langle \xi \rangle$--component 
+    of $\theta$ applied to $\mathcal{D}$,
+    \item $a \in C^{\infty}(M)$ is the scalar component of $\theta(\xi)$ along~$\xi$.
+\end{itemize}
+The commutator of $\theta$ and $\varphi$ is
+\[
+[\theta,\varphi] 
+= \theta\varphi - \varphi\theta
+= \begin{pmatrix}
+B J - J B & - J u \\[4pt]
+v^{\top} J & 0
+\end{pmatrix}.
+\]
+Thus $[\theta,\varphi] \neq 0$ may arise in three distinct ways:
+\begin{enumerate}
+    \item The $\mathcal{D}$--component $B$ does not commute with $J$, i.e.\ $[B,J] \neq 0$.
+    \item The vector $u$ is nonzero (mixing $\xi \to \mathcal{D}$): the upper-right block $-J u$ is nonzero.
+    \item The covector $v$ is nonzero (mixing $\mathcal{D} \to \xi$): the lower-left block $v^{\top} J$ is nonzero.
+\end{enumerate}
+For each fixed $X \in T_p M$, the map 
+\[
+Y \longmapsto D(X,Y)
+\]
+is a linear endomorphism of $T_p M$.  
+Thus, for each $X$ we can represent $D(X)$ as a block matrix
+\[
+D(X) \;\equiv\;
+\begin{pmatrix}
+D_{11}(X) & D_{12}(X) \\[4pt]
+D_{21}(X) & D_{22}(X)
+\end{pmatrix},
+\]
+where the blocks correspond to the orthogonal splitting 
+$T_p M = \mathcal{D}_p \oplus \langle \xi_p \rangle$.
+
+On the other hand, the gauge equation is equivalent to
+\begin{equation}
+(\nabla^g_X \theta)(Y) + D(X,\theta Y) + \theta\big( D(X,Y) \big) = 0,
+\qquad \forall X,Y \in TM.
+\tag{$\star$}
+\end{equation}
+The equation \((\star)\) becomes, for each $X \in TM$,
+\begin{equation}
+(\nabla^g_X \theta) \;+\; D(X)\,\theta \;+\; \theta\,D(X) \;=\; 0.
+\tag{1}
+\end{equation}
+Expanding \((1)\) in block form gives the following system of equations:
+
+\begin{align}
+\text{(1a)} &:\quad 
+(\nabla^g_X B) + D_{11}(X) B + D_{12}(X) v^\top + B D_{11}(X) + u D_{21}(X) = 0,
+\nonumber \\[4pt]
+\text{(1b)} &:\quad 
+(\nabla^g_X u) + D_{11}(X) u + D_{12}(X) a + B D_{12}(X) + u D_{22}(X) = 0,
+\nonumber \\[4pt]
+\text{(1c)} &:\quad 
+(\nabla^g_X v^\top) + D_{21}(X) B + D_{22}(X) v^\top + v^\top D_{11}(X) + a D_{21}(X) = 0,
+\nonumber \\[4pt]
+\text{(1d)} &:\quad 
+X(a) + D_{21}(X) u + v^\top D_{12}(X) + 2 a \, D_{22}(X) = 0.
+\nonumber
+\end{align}
+\begin{lem}
+Let $(M,\phi,\xi,\eta,g)$ be a statistical coK\"ahler manifold. 
+With respect to the orthogonal splitting $TM = D \oplus \langle\xi\rangle$ and the block form
+\[
+\phi =
+\begin{pmatrix}
+J & 0\\
+0 & 0
+\end{pmatrix},
+\]
+write $D(X)$ as
+\[
+D(X) =
+\begin{pmatrix}
+D_{11}(X) & D_{12}(X)\\
+D_{21}(X) & D_{22}(X)
+\end{pmatrix}.
+\]
+Then, for every $X \in TM$,
+\[
+D_{12}(X) = 0, \qquad D_{21}(X) = 0, \qquad D_{11}(X)J + J\,D_{11}(X) = 0,
+\]
+and $D_{22}(X)$ is a scalar multiple of the identity on $\langle\xi\rangle$.
+\end{lem}
+
+\begin{proof}
+First take $Y = \xi$. Since $\phi \xi = 0$, the relation $D(X,\phi Y) + \phi D(X,Y) = 0$ reduces to $\phi D(X,\xi) = 0$. This means $D(X,\xi) \in \langle\xi\rangle$, hence $D_{12}(X) = 0$.
+
+Next, take $Y \in D$. Then $\phi Y = JY \in D$. The $\langle\xi\rangle$--component of $D(X,\phi Y) + \phi D(X,Y) = 0$ is
+\[
+D_{21}(X) (JY) + 0 = 0.
+\]
+Since $J$ is invertible on $D$, this implies $D_{21}(X) \equiv 0$.  
+The $D$--component of the same relation reads
+\[
+D_{11}(X) JY + J D_{11}(X) Y = 0,
+\]
+for all $Y \in D$, i.e.
+\[
+D_{11}(X) J + J\,D_{11}(X) = 0.
+\]
+Finally, since $\langle\xi\rangle$ is one--dimensional, $D_{22}(X)$ is necessarily a scalar. 
+\end{proof}
+
+With the above simplifications, the gauge equation $\nabla \theta = \theta \nabla^\ast$ in block form
+\[
+\theta =
+\begin{pmatrix}
+B & u\\
+v^{\top} & a
+\end{pmatrix}
+\]
+reduces to the following system: for all $X \in TM$,
+\begin{align}
+(\nabla^g_X B) + D_{11}(X) B + B\,D_{11}(X) &= 0, \tag{1a'}\\
+(\nabla^g_X u) + D_{11}(X) u + u\,D_{22}(X) &= 0, \tag{1b'}\\
+(\nabla^g_X v^{\top}) + v^{\top} D_{11}(X) + D_{22}(X)\,v^{\top} &= 0, \tag{1c'}\\
+X(a) + 2 a\, D_{22}(X) &= 0. \tag{1d'}
+\end{align}
+
+
+Fix a vector field $X$ and an integral curve $\gamma(s)$ with $\dot{\gamma}(s) = X(\gamma(s))$. 
+Let $\nabla^g_{\dot{\gamma}}$ denote the covariant derivative along $\gamma$. 
+Define
+\begin{equation}
+\notag
+\delta(s) := \int_{0}^{s} D_{22}\!\big(X\big)\!\left(\gamma(\tau)\right)\,d\tau,
+\qquad
+\mathcal{P}_{11}(s) := \mathcal{P}\exp\!\left(-\int_{0}^{s} D_{11}\!\big(X\big)\!\left(\gamma(\tau)\right)\,d\tau\right),
+\end{equation}
+where $\mathcal{P}\exp$ is the path--ordered exponential.
+
+If $B_0, u_0, v_0^\top, a_0$ denote the initial values of the components of $\theta$ at $s=0$, the unique solution of \((1a')\)–\((1d')\) along $\gamma$ is given by
+\begin{align}
+B(s) &= \mathcal{P}_{11}(s)\,B_0\,\mathcal{P}_{11}(s), \tag{A} \\
+u(s) &= e^{-\delta(s)}\,\mathcal{P}_{11}(s)\,u_0, \tag{B} \\
+v^\top(s) &= e^{-\delta(s)}\,v_0^\top\,\mathcal{P}_{11}(s), \tag{C} \\
+a(s) &= a_0\,e^{-2\delta(s)}. \tag{D}
+\end{align}
+\begin{lem}
+Let $(M,\varphi,\xi,\eta,g,\nabla)$ be a statistical coK\"ahler manifold and
+assume the hypotheses of Lemma 4.3. Along an integral curve $\gamma(s)$ of a vector field $X=\dot\gamma(s)$ the block equation
+\begin{equation}\tag{$1a'$}
+\nabla^g_X B + D_{11}(X)B + B\,D_{11}(X) = 0
+\end{equation}
+implies the following.
+
+\begin{enumerate}
+\item The endomorphism $BJ$ satisfies the linear ODE
+\[
+\nabla^g_X(BJ) + [D_{11}(X),\,BJ] = 0,
+\]
+hence, if we set
+\[
+U(s) \;=\; \mathcal P\!\exp\!\Big(-\int_0^s D_{11}(\dot\gamma(\tau))\,d\tau\Big),
+\qquad U(0)=\mathrm{Id},
+\]
+we have the conjugation formula
+\[
+BJ(s) \;=\; U(s)\, (BJ)(0)\, U(s)^{-1}.
+\]
+
+\item The endomorphism $JB$ satisfies the linear ODE
+\[
+\nabla^g_X(JB) + [JB,\,D_{11}(X)] = 0,
+\]
+and with $U(s)$ as above one obtains
+\[
+JB(s) \;=\; U(s)^{-1}\, (JB)(0)\, U(s).
+\]
+
+\item Let $C(s):=[B(s),J]=B(s)J-JB(s)$. Suppose that at $s=0$ the pair
+$(BJ(0),\,JB(0))$ is not conjugate, i.e.\ there exists no invertible
+$Q\in\mathrm{GL}(D)$ with
+\[
+BJ(0)=Q\,(JB(0))\,Q^{-1}.
+\]
+Then $C(s)\neq 0$ for all $s$ along $\gamma$; equivalently, if $[B(0),J]\neq0$
+and $BJ(0)$ is not conjugate to $JB(0)$, the commutator $[B(s),J]$ never
+vanishes along $\gamma$.
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+Multiply (1a') on the right by $J$. Using $\nabla^g J=0$ and the
+anti-commutation $D_{11}J=-J D_{11}$ (Lemma 4.3) we get
+\[
+\nabla^g_X(BJ) + D_{11}(X)BJ - BJ\,D_{11}(X) = 0,
+\]
+which is exactly
+\[
+\nabla^g_X(BJ) + [D_{11}(X),\,BJ] = 0.
+\]
+Along the curve $\gamma$ this is an ordinary linear matrix ODE for the
+time-dependent endomorphism $A(s):=BJ(s)$. The standard solution of
+$\dot A + [D_{11}(s),A]=0$ is conjugation by the fundamental solution
+$U(s)$ of $\dot U=-D_{11}(s)U$, $U(0)=\mathrm{Id}$; writing the solution
+via the path-ordered exponential gives the formula
+$BJ(s)=U(s)\,(BJ)(0)\,U(s)^{-1}$.
+
+Similarly, multiply (1a') on the left by $J$ and use $J D_{11} = - D_{11} J$:
+\[
+\nabla^g_X(JB) - D_{11}(X)JB + JB\,D_{11}(X) = 0,
+\]
+i.e.
+\[
+\nabla^g_X(JB) + [JB,\,D_{11}(X)] = 0.
+\]
+If $U(s)$ is as above then $U(s)^{-1}$ satisfies $\dot W = D_{11}(s)W$,
+$W(0)=\mathrm{Id}$, and one checks that
+$JB(s)=U(s)^{-1}\,(JB)(0)\,U(s)$.
+
+Finally, assume by contradiction that there exists $s_0$ with $C(s_0)=0$.
+Then $BJ(s_0)=JB(s_0)$. Using the conjugation formulas we obtain
+\[
+U(s_0)\,(BJ)(0)\,U(s_0)^{-1} \;=\; U(s_0)^{-1}\,(JB)(0)\,U(s_0).
+\]
+Multiply on the left by $U(s_0)^{-1}$ and on the right by $U(s_0)^{-1}$ to get
+\[
+(BJ)(0) \;=\; U(s_0)^{-2}\,(JB)(0)\,U(s_0)^{2},
+\]
+so $(BJ)(0)$ and $(JB)(0)$ are conjugate (by $Q=U(s_0)^{-2}$). This contradicts
+the hypothesis that they are not conjugate. Hence $C(s)\neq0$ for all $s$,
+which proves persistence of non-commutativity along $\gamma$.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
